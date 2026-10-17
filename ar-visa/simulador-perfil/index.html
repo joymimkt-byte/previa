@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><link rel="icon" href="../favicon.png">
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulador de Perfil para Visto Americano | AR Visa</title>
+<meta name="description" content="Simulador gratuito e informativo para entender os pontos fortes e os pontos de atenção do seu perfil para o visto americano de turismo e negócios (B1/B2).">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Lexend:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#101d38;--red:#c62835;--ink:#18243b;--muted:#637087;--bg:#f4f6fa;--line:#e1e6ee;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,Arial,sans-serif;color:var(--ink);line-height:1.45}
+header{background:var(--navy);color:white;padding:18px 24px;border-bottom:4px solid var(--red)}
+.top{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-weight:800;letter-spacing:.3px;font-size:21px}.brand span{color:#ff6974}.subbrand{font-size:11px;color:#c9d1df;margin-top:2px}
+.pill{font-size:11px;border:1px solid #65718a;border-radius:30px;padding:7px 11px;color:#e1e6ef}
+main{max-width:900px;margin:28px auto;padding:0 16px 40px}
+.intro{text-align:center;margin:0 auto 22px;max-width:700px}.eyebrow{color:var(--red);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:1.1px}
+h1{font-size:clamp(25px,4vw,36px);line-height:1.12;margin:9px 0 12px;color:var(--navy)}.intro p{color:var(--muted);margin:0}
+.progressbox{background:white;border:1px solid var(--line);border-radius:12px;padding:15px 18px;margin-bottom:14px}
+.progressrow{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:8px}.bar{height:6px;border-radius:20px;background:#e8ebf1;overflow:hidden}.bar div{height:100%;background:var(--red);width:0;transition:width .2s}
+.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:clamp(18px,4vw,30px);box-shadow:0 8px 28px #17233d08}
+.step-label{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--red);font-weight:800}
+h2{font-size:22px;margin:8px 0 6px;color:var(--navy)}.help{font-size:14px;color:var(--muted);margin:0 0 20px}
+.field{margin:18px 0 24px}.field>label,.question{display:block;font-weight:750;margin-bottom:10px}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.option{position:relative;display:flex;align-items:flex-start;gap:10px;padding:14px;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:#fff;min-height:68px;transition:.15s}
+.option:hover{border-color:#a9b5c8}.option:has(input:checked){border-color:var(--red);background:#fff7f7;box-shadow:0 0 0 1px #c6283515}
+.option input{accent-color:var(--red);margin-top:4px}.option strong{display:block;font-size:14px}.option small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:12px;border:1px solid #cfd6e1;border-radius:8px;font:inherit;background:white;color:var(--ink)}
+.note{background:#f7f8fb;border-left:3px solid var(--red);padding:12px 14px;color:#526077;font-size:12px;border-radius:4px;margin:18px 0}
+.actions{display:flex;justify-content:space-between;gap:12px;margin-top:28px}.btn{border:0;border-radius:9px;padding:12px 18px;font-weight:800;font-size:14px;cursor:pointer}.primary{background:var(--navy);color:white}.primary:hover{background:#1c3158}.secondary{background:white;border:1px solid #cbd3df;color:var(--navy)}.hidden{display:none!important}
+.result-score{background:var(--navy);color:white;padding:24px;border-radius:12px}.result-score .score{font-size:42px;font-weight:900}.result-score p{color:#dbe3f1;margin:6px 0 0}.tag{display:inline-block;border-radius:20px;padding:5px 9px;font-size:11px;font-weight:800;background:#ffe8d0;color:#8c4200}
+.pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}.pillar{border:1px solid var(--line);border-radius:9px;padding:13px}.pillar strong{font-size:13px}.meter{height:6px;background:#e8ebf1;border-radius:20px;margin-top:9px;overflow:hidden}.meter div{height:100%;background:var(--red)}
+.result-list{padding-left:19px}.result-list li{margin:8px 0}.cta{display:block;text-align:center;text-decoration:none;background:var(--red);color:white;padding:14px;border-radius:9px;font-weight:800;margin-top:18px}
+footer{text-align:center;color:#788398;font-size:11px;margin-top:20px}
+@media(max-width:600px){.options,.pillars{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.pill{display:none}.actions .btn{flex:1}}
+
+:root{--navy:#0A0A0B;--red:#D3111D;--ink:#0A0A0B;--muted:#5E5E68;--bg:#F4F4F6;--line:#E3E3E8;--white:#fff}
+body{font-family:Inter,Arial,sans-serif}
+h1,h2,.brandtxt{font-family:Lexend,Inter,Arial,sans-serif}
+.site-header{position:sticky;top:0;z-index:20;background:#0A0A0B;border-bottom:1px solid rgba(255,255,255,.08)}
+.site-header .in{max-width:1200px;margin:auto;height:84px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.site-logo{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+.site-logo img{height:40px;width:auto}
+.brandtxt{font-weight:700;font-size:17px;line-height:1.1}.brandtxt span{color:#F81622}
+.brandsub{display:block;font-family:Inter,Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.7)}
+.site-nav{display:flex;gap:30px}.site-nav a{color:rgba(255,255,255,.72);text-decoration:none;font-weight:500;font-size:15px}.site-nav a:hover,.site-nav a.ativo{color:#fff}
+.btn-esp{display:inline-flex;align-items:center;gap:8px;background:#D3111D;color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:13px 18px;border-radius:10px}
+.btn-esp svg{width:18px;height:18px}
+.hero-sim{background:radial-gradient(ellipse at 50% -20%,rgba(248,22,34,.28),transparent 60%),#0A0A0B;color:#fff;text-align:center;padding:64px 20px 56px}
+.hero-sim .eyebrow{display:inline-block;border:1px solid rgba(255,255,255,.2);border-radius:99px;padding:7px 14px;color:rgba(255,255,255,.85)!important}
+.hero-sim h1{line-height:1.12!important;color:#fff!important;font-size:clamp(28px,4.5vw,50px)!important;max-width:900px;margin:16px auto 14px!important;letter-spacing:-.02em}
+.hero-sim p{color:rgba(255,255,255,.75)!important;max-width:720px;margin:0 auto!important}
+.site-footer{background:#141416;color:rgba(255,255,255,.6);font-size:13px;padding:32px 20px;text-align:center}
+.site-footer a{color:#fff}
+.wpp-float{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:30}
+.wpp-float svg{width:30px;height:30px;fill:#fff}
+@media(max-width:860px){.site-nav{display:none}.btn-esp span{display:none}.btn-esp{padding:12px}}
+.site-nav,.brandtxt,.btn-esp{white-space:nowrap}.site-nav{align-items:center}
+.drop{position:relative}.drop::after{content:"";position:absolute;left:0;right:0;top:100%;height:18px}
+.drop-menu{position:absolute;top:calc(100% + 16px);left:-16px;min-width:250px;background:#fff;border-radius:14px;padding:8px;box-shadow:0 16px 40px rgba(0,0,0,.2);opacity:0;visibility:hidden;transition:.15s}
+.drop:hover .drop-menu,.drop:focus-within .drop-menu{opacity:1;visibility:visible}
+.drop-menu a{display:block;color:#0A0A0B!important;padding:12px 14px;border-radius:10px;font-weight:600}.drop-menu a:hover{background:#F4F4F6}
+.primary:hover{background:#222!important}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="in"><a class="site-logo" href="../index.html" aria-label="AR Visa, página inicial"><img src="../assets/logo-mark.png" alt="AR Visa" width="106" height="40"><span class="brandtxt">AR <span>VISA</span><small class="brandsub">ASSESSORIA DE VISTOS</small></span></a><nav class="site-nav" aria-label="Menu principal"><a href="../index.html">Início</a><a href="../index.html">Visto Americano</a><div class="drop"><a href="../renovacao-sem-entrevista/index.html" class="ativo">Simuladores ▾</a><div class="drop-menu"><a href="../renovacao-sem-entrevista/index.html">Renovação sem entrevista</a><a href="../simulador-perfil/index.html">Análise de perfil B1/B2</a></div></div><a href="https://wa.me/5585991921774" target="_blank" rel="noopener">Contato</a></nav><a class="btn-esp" href="https://wa.me/5585991921774?text=Ol%C3%A1!%20Fiz%20o%20simulador%20de%20perfil%20no%20site%20da%20AR%20Visa%20e%20quero%20falar%20com%20um%20especialista." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>Fale com um especialista</span></a></div></header>
+<section class="hero-sim"><div class="eyebrow">Análise preliminar de perfil · Visto B1/B2</div><h1>Entenda os pontos fortes e os pontos de atenção do seu perfil</h1><p>Responda às perguntas sobre sua situação atual e sua viagem. Ao final, você receberá uma leitura inicial para orientar os próximos passos.</p></section>
+<main>
+
+<div class="progressbox"><div class="progressrow"><span id="stepName">Etapa 1 de 6</span><span id="progressPct">17%</span></div><div class="bar"><div id="progressBar"></div></div></div>
+<section class="panel" id="wizard">
+<div id="stepContent"></div>
+<div class="note">Este simulador é uma ferramenta informativa, não prevê nem garante aprovação ou negativa. A decisão é exclusiva do oficial consular. Responda de forma verdadeira; não omita informações solicitadas no DS-160.</div>
+<div class="actions"><button class="btn secondary" id="backBtn" type="button">Voltar</button><button class="btn primary" id="nextBtn" type="button">Continuar →</button></div>
+</section>
+<section class="panel hidden" id="results"></section>
+<p style="text-align:center;color:#788398;font-size:11px;margin-top:20px">Simulação educativa para visto de visitante B1/B2. Não substitui orientação individualizada.</p>
+</main>
+<footer class="site-footer">© 2026 AR Visa | Assessoria de Vistos · Fortaleza, Ceará · WhatsApp <a href="https://wa.me/5585991921774?text=Ol%C3%A1!%20Fiz%20o%20simulador%20de%20perfil%20no%20site%20da%20AR%20Visa%20e%20quero%20falar%20com%20um%20especialista." target="_blank" rel="noopener">(85) 99192-1774</a><br>A AR Visa é uma assessoria privada e não tem vínculo com o governo dos Estados Unidos.</footer><a class="wpp-float" href="https://wa.me/5585991921774?text=Ol%C3%A1!%20Fiz%20o%20simulador%20de%20perfil%20no%20site%20da%20AR%20Visa%20e%20quero%20falar%20com%20um%20especialista." target="_blank" rel="noopener" aria-label="Fale com um especialista pelo WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+<script>
+const steps = [
+{title:"Modalidade e dados básicos",desc:"Começamos pelo tipo de solicitação e pela idade do solicitante.",fields:[
+{id:"process",q:"Qual é a sua situação?",type:"radio",required:true,opts:[["first","Solicitando meu primeiro visto","Ainda não tive visto americano."],["renew","Renovando um visto anterior","Já tive visto americano, válido ou vencido."]]},
+{id:"age",q:"Qual é a sua faixa etária?",type:"radio",required:true,opts:[["u13","Até 13 anos","Menor de idade."],["teen","14 a 17 anos","Adolescente."],["adult","18 a 29 anos","Adulto jovem."],["mid","30 a 59 anos","Adulto."],["senior","60 anos ou mais","Solicitante sênior."]]},
+{id:"passport",q:"Qual é a situação do seu passaporte?",type:"radio",required:true,opts:[["valid","Válido por mais de 12 meses","Documento disponível."],["soon","Válido, mas vence em menos de 12 meses","Confira a validade para o roteiro."],["expired","Vencido","Providencie a renovação antes de avançar."],["none","Ainda não tenho passaporte","Será necessário emitir o documento."]]}
+]},
+{title:"Trabalho e rotina no Brasil",desc:"A situação profissional deve ser descrita de forma fiel e compatível com os documentos disponíveis.",fields:[
+{id:"occupation",q:"Qual opção melhor descreve sua situação atual?",type:"radio",required:true,opts:[["public","Servidor público","Vínculo público ativo."],["business","Empresário ou sócio","Empresa ou atividade empresarial."],["clt","Empregado com carteira assinada","Vínculo formal de trabalho."],["self","Autônomo, MEI ou profissional liberal","Atividade por conta própria."],["retired","Aposentado ou pensionista","Renda previdenciária."],["student","Estudante","Matrícula ativa."],["unemployed","Sem emprego ou atividade profissional no momento","Sem vínculo formal atual."]]},
+{id:"tenure",q:"Há quanto tempo está nessa atividade?",type:"radio",required:true,opts:[["long","Mais de 3 anos","Histórico profissional mais longo."],["medium","De 1 a 3 anos","Vínculo intermediário."],["short","Menos de 1 ano","Atividade recente."],["na","Não se aplica","Ex.: estudante sem emprego."]]},
+{id:"formalproof",q:"Você possui documentos que comprovam sua situação atual?",type:"radio",required:true,opts:[["yes","Sim, tenho documentos atuais","Ex.: holerites, contrato, notas fiscais ou matrícula."],["some","Tenho alguns comprovantes","A documentação pode precisar de organização."],["no","Ainda não tenho comprovantes","Será necessário avaliar o que é aplicável ao seu caso."]]}
+]},
+{title:"Recursos para a viagem",desc:"Considere a renda real e os recursos que podem ser demonstrados. Não existe renda mínima universal que garanta aprovação.",fields:[
+{id:"income",q:"Qual é a renda média mensal comprovável?",type:"radio",required:true,opts:[["high","Acima de R$ 12.000","Renda mensal nessa faixa."],["mid","De R$ 6.000 a R$ 11.999","Renda mensal nessa faixa."],["lowmid","De R$ 3.000 a R$ 5.999","Renda mensal nessa faixa."],["low","Abaixo de R$ 3.000","Renda mensal nessa faixa."],["var","Variável ou sem renda própria","Pode haver outra fonte de custeio."]]},
+{id:"reserve",q:"Qual reserva financeira está disponível para a viagem?",type:"radio",required:true,opts:[["rhigh","Acima de R$ 30.000","Recursos disponíveis e demonstráveis."],["rmid","De R$ 10.000 a R$ 30.000","Recursos disponíveis e demonstráveis."],["rlow","De R$ 3.000 a R$ 9.999","Avalie a relação com os custos da viagem."],["rnone","Menos de R$ 3.000 ou sem reserva","Pode ser importante esclarecer o custeio."],["unknown","Ainda não sei calcular","Estime os custos antes de concluir."]]},
+{id:"tax",q:"Como você declara seus rendimentos?",type:"radio",required:true,opts:[["full","Declaro os rendimentos aplicáveis integralmente","Conforme a situação tributária real."],["partial","Declaração parcial ou situação mista","Existem outras fontes ou formas de comprovação."],["exempt","Isento ou não obrigado a declarar","Aplique apenas se for verdadeiro."],["na","Não sei / preciso confirmar","Confira com seu contador, se necessário."]]},
+{id:"payer",q:"Quem pagará as despesas da viagem?",type:"radio",required:true,opts:[["self","Eu mesmo(a)","Recursos próprios."],["parents","Pais ou cônjuge no Brasil","Familiar próximo custeará a viagem."],["company","Empresa ou instituição","Viagem relacionada a atividade institucional."],["usfamily","Familiar que mora nos EUA","O vínculo e o propósito da visita podem exigir esclarecimentos."],["other","Outra pessoa","Será necessário explicar a relação e o custeio."]]}
+]},
+{title:"Plano de viagem",desc:"O motivo, o tempo de permanência e a hospedagem devem formar um roteiro plausível e verdadeiro.",fields:[
+{id:"purpose",q:"Qual é o principal motivo da viagem?",type:"radio",required:true,opts:[["tourism","Turismo, férias ou parques","Passeios e lazer."],["visit","Visitar familiares ou amigos","Visita pessoal."],["business","Negócios, feira ou reunião","Atividade permitida conforme a categoria B1/B2."],["medical","Tratamento médico","Pode exigir documentação específica."],["other","Outro motivo permitido","Descreva corretamente na análise individual."]]},
+{id:"duration",q:"Quanto tempo pretende permanecer nos Estados Unidos?",type:"radio",required:true,opts:[["d15","Até 15 dias","Viagem curta."],["d30","16 a 30 dias","Férias mais longas."],["d90","1 a 3 meses","É importante explicar o roteiro e os recursos."],["dlong","Mais de 3 meses ou ainda indefinido","Exige avaliação cuidadosa do propósito e da duração."]]},
+{id:"when",q:"Quando pretende viajar?",type:"radio",required:true,opts:[["soon","Nos próximos 3 meses","Prazo próximo."],["mid","De 3 a 6 meses","Planejamento intermediário."],["long","De 6 a 12 meses","Planejamento antecipado."],["unset","Ainda não defini a data","Viagem em fase de planejamento."]]},
+{id:"stay",q:"Onde pretende se hospedar?",type:"radio",required:true,opts:[["hotel","Hotel ou aluguel por temporada","Hospedagem comercial."],["relative","Casa de parente","Informe corretamente os dados solicitados."],["friend","Casa de amigo ou conhecido","Tenha informações reais sobre a hospedagem."],["unset","Ainda não defini","Defina um plano plausível antes da entrevista."]]},
+{id:"companion",q:"Com quem pretende viajar?",type:"radio",required:true,opts:[["visa","Com familiar ou acompanhante que já tem visto válido","A pessoa não garante a aprovação do seu visto."],["family","Com familiares que também solicitarão visto","Cada solicitação é analisada individualmente."],["group","Com amigos ou grupo organizado","Tenha clareza do roteiro."],["alone","Sozinho(a)","Explique seu plano de viagem com clareza."]]}
+]},
+{title:"Vínculos e histórico",desc:"Responda com exatidão sobre sua vida no Brasil e seu histórico migratório.",fields:[
+{id:"assets",q:"Quais vínculos ou bens você possui no Brasil?",type:"multi",required:true,opts:[["property","Imóvel próprio ou financiado","Em seu nome ou, quando pertinente, do cônjuge."],["vehicle","Veículo em seu nome","Documento atualizado."],["company","Empresa ou CNPJ ativo","Atividade empresarial."],["investments","Investimentos ou poupança","Recursos comprováveis."],["family","Dependentes ou responsabilidades familiares","Vínculos pessoais no Brasil."],["none","Não tenho bens registrados em meu nome","Não impede automaticamente a aprovação."]]},
+{id:"family",q:"Qual opção melhor descreve sua estrutura familiar no Brasil?",type:"radio",required:true,opts:[["marriedkids","Casado(a) com filhos","Informe a situação real."],["married","Casado(a) ou em união estável, sem filhos","Informe a situação real."],["singlekids","Solteiro(a) com filhos","Informe a situação real."],["divkids","Divorciado(a) com filhos","Informe a situação real."],["single","Solteiro(a) sem filhos","Vínculos serão avaliados no conjunto."],["other","Outra situação","Detalhar na análise individual."]]},
+{id:"travelhistory",q:"Qual é seu histórico de viagens internacionais?",type:"radio",required:true,opts:[["us","Já tive visto americano","Válido ou expirado."],["europe","Já viajei para Europa, Reino Unido, Canadá, Japão ou Austrália","Histórico internacional."],["other","Já viajei para outros países","Informe as viagens verdadeiras."],["none","Nunca viajei para o exterior","Primeira viagem internacional."]]},
+{id:"usfamily",q:"Você tem familiares morando nos Estados Unidos?",type:"radio",required:true,opts:[["none","Não tenho familiares nos EUA","Seja fiel à situação real."],["extended","Tenho parentes, como tios, primos ou avós","O DS-160 pode solicitar detalhes adicionais."],["immediate","Tenho pais, cônjuge, filhos ou irmãos nos EUA","Informe o vínculo e o status conforme solicitado."],["unknown","Tenho familiares, mas não sei o status migratório","Procure confirmar as informações que o formulário solicitar."],["irregular","Tenho familiares em situação migratória irregular","Não omita informações solicitadas; procure orientação individual."]]},
+{id:"denial",q:"Você já teve visto americano negado?",type:"radio",required:true,opts:[["never","Nunca tive visto negado","Histórico sem negativa."],["old","Sim, há mais de 2 anos","Informe corretamente a data e as circunstâncias."],["recent","Sim, nos últimos 24 meses","Pode ser importante revisar o que mudou."],["multiple","Sim, mais de uma vez","Recomenda-se análise individual do histórico."]]},
+{id:"issues",q:"Existe algum antecedente migratório ou jurídico relevante?",type:"radio",required:true,opts:[["no","Nenhuma das situações abaixo se aplica","Responda apenas se for verdadeiro."],["deniedentry","Já tive entrada negada ou fui deportado(a) dos EUA","Exige avaliação individual."],["overstay","Já permaneci além do prazo autorizado em algum país","Informe os fatos quando solicitado."],["criminal","Tenho antecedente criminal ou processo judicial","Pode exigir orientação especializada."],["asylum","Já solicitei asilo ou refúgio","Exige avaliação individual."]]}
+]}
+];
+let current=0, answers={};
+const content=document.getElementById('stepContent');
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function render(){
+ const s=steps[current];document.getElementById('stepName').textContent=`Etapa ${current+1} de ${steps.length}`;
+ const pct=Math.round((current+1)/steps.length*100);document.getElementById('progressPct').textContent=pct+'%';document.getElementById('progressBar').style.width=pct+'%';
+ document.getElementById('backBtn').style.visibility=current===0?'hidden':'visible';
+ document.getElementById('nextBtn').textContent=current===steps.length-1?'Ver minha análise →':'Continuar →';
+ let out=`<div class="step-label">Etapa ${current+1} · ${steps.length}</div><h2>${s.title}</h2><p class="help">${s.desc}</p>`;
+ s.fields.forEach(f=>{
+ out+=`<div class="field"><label>${f.q}${f.required?' *':''}</label>`;
+ if(f.type==='text'||f.type==='number'||f.type==='date'){out+=`<input type="${f.type}" id="${f.id}" value="${esc(answers[f.id]||'')}" ${f.required?'required':''}>`;}
+ else {out+='<div class="options">';f.opts.forEach(([v,t,d])=>{
+ let checked=f.type==='multi'?(answers[f.id]||[]).includes(v):answers[f.id]===v;
+ out+=`<label class="option"><input type="${f.type==='multi'?'checkbox':'radio'}" name="${f.id}" value="${v}" ${checked?'checked':''}><span><strong>${t}</strong>${d?`<small>${d}</small>`:''}</span></label>`;
+ });out+='</div>';}
+ out+='</div>';
+ });content.innerHTML=out;
+}
+function collect(){
+ const s=steps[current];
+ for(const f of s.fields){
+  if(f.type==='multi'){answers[f.id]=[...document.querySelectorAll(`input[name="${f.id}"]:checked`)].map(x=>x.value);}
+  else if(f.type==='radio'){const el=document.querySelector(`input[name="${f.id}"]:checked`);if(el)answers[f.id]=el.value;}
+  else {const el=document.getElementById(f.id);if(el)answers[f.id]=el.value.trim();}
+ }
+}
+function score(){
+ let pillars={Trabalho:0,Finanças:0,Viagem:0,Vínculos:0,Histórico:0}, max={Trabalho:20,Finanças:20,Viagem:20,Vínculos:20,Histórico:20}, flags=[];
+ const add=(p,n)=>pillars[p]+=n;
+ if(['public','business','clt'].includes(answers.occupation))add('Trabalho',14);
+ else if(answers.occupation==='self')add('Trabalho',12);
+ else if(answers.occupation==='student')add('Trabalho',10);
+ else if(answers.occupation==='retired')add('Trabalho',12);else add('Trabalho',5);
+ if(answers.tenure==='long')add('Trabalho',6);else if(answers.tenure==='medium')add('Trabalho',4);else if(answers.tenure==='na')add('Trabalho',2);
+ if(answers.formalproof==='yes')add('Trabalho',4);else if(answers.formalproof==='some')add('Trabalho',2);
+ if(['high','mid'].includes(answers.income))add('Finanças',10);else if(answers.income==='lowmid')add('Finanças',7);else add('Finanças',3);
+ if(answers.reserve==='rhigh')add('Finanças',6);else if(answers.reserve==='rmid')add('Finanças',5);else if(answers.reserve==='rlow')add('Finanças',3);else add('Finanças',1);
+ if(answers.tax==='full')add('Finanças',4);else if(answers.tax==='partial'||answers.tax==='exempt')add('Finanças',3);else add('Finanças',1);
+ if(['d15','d30'].includes(answers.duration))add('Viagem',7);else if(answers.duration==='d90')add('Viagem',4);else add('Viagem',1);
+ if(answers.stay!=='unset')add('Viagem',4);else flags.push('Defina a hospedagem e organize um roteiro coerente antes de finalizar o planejamento.');
+ if(answers.purpose==='tourism'||answers.purpose==='visit')add('Viagem',5);else add('Viagem',4);
+ if(answers.assets?.includes('family')||answers.assets?.includes('property')||answers.assets?.includes('company'))add('Vínculos',8);
+ if(answers.family==='marriedkids'||answers.family==='singlekids'||answers.family==='divkids')add('Vínculos',6);else if(answers.family==='married')add('Vínculos',5);else add('Vínculos',2);
+ if(answers.assets?.includes('vehicle')||answers.assets?.includes('investments'))add('Vínculos',3);
+ if(answers.travelhistory==='us'||answers.travelhistory==='europe')add('Histórico',10);else if(answers.travelhistory==='other')add('Histórico',7);else add('Histórico',4);
+ if(answers.denial==='never')add('Histórico',6);else if(answers.denial==='old'){add('Histórico',4);flags.push('Se houve negativa anterior, revise o que mudou no perfil e responda com precisão sobre o histórico.');}else {add('Histórico',1);flags.push('O histórico de negativas merece análise individual antes de decidir o melhor momento para solicitar novamente.');}
+ if(['irregular','immediate','unknown'].includes(answers.usfamily))flags.push('Revise cuidadosamente as informações sobre familiares nos EUA e responda ao DS-160 de forma completa e verdadeira.');
+ if(['deniedentry','overstay','criminal','asylum'].includes(answers.issues))flags.push('O histórico migratório ou jurídico informado exige análise individual especializada antes de prosseguir.');
+ if(answers.passport==='expired'||answers.passport==='none')flags.push('Regularize a situação do passaporte antes de avançar com o processo.');
+ if(answers.formalproof==='no')flags.push('Organize documentos compatíveis com sua situação profissional, financeira e familiar, conforme aplicável.');
+ let total=Object.values(pillars).reduce((a,b)=>a+b,0);total=Math.max(0,Math.min(100,Math.round(total)));
+ // Normalize pillar values to 20-point displays.
+ const status=total>=75?'Perfil com fatores favoráveis':total>=55?'Perfil que merece preparação':'Recomenda-se análise individual';
+ const tag=total>=75?'LEITURA PRELIMINAR FAVORÁVEL':total>=55?'PONTOS DE ATENÇÃO':'ANÁLISE INDIVIDUAL RECOMENDADA';
+ if(!flags.length)flags.push('Revise a coerência entre as respostas, o DS-160 e os documentos que realmente possui.');
+ return {total,pillars,status,tag,flags};
+}
+function showResults(){
+ const r=score();document.getElementById('wizard').classList.add('hidden');const box=document.getElementById('results');box.classList.remove('hidden');
+ let phtml=Object.entries(r.pillars).map(([k,v])=>{let val=Math.min(100,Math.round(v/20*100));return `<div class="pillar"><strong>${k}</strong><div style="font-size:12px;color:#637087;margin-top:4px">${Math.min(v,20)} de 20 pontos · leitura indicativa</div><div class="meter"><div style="width:${val}%"></div></div></div>`}).join('');
+ box.innerHTML=`<div class="step-label">Resultado da simulação</div><div class="result-score"><span class="tag">${r.tag}</span><div class="score">${r.total}<span style="font-size:17px;color:#cbd5e5"> / 100</span></div><h2 style="color:white;margin:0">${r.status}</h2><p>Esta pontuação é apenas uma referência educativa baseada nas respostas. Não representa probabilidade estatística de aprovação.</p></div><h2 style="margin-top:25px">Leitura por área</h2><div class="pillars">${phtml}</div><h2>Pontos para revisar</h2><ul class="result-list">${r.flags.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="note">Não existe uma pontuação oficial de aprovação para o visto americano. O consulado avalia cada caso individualmente, incluindo propósito da viagem, recursos, vínculos e histórico. Nunca altere ou omita fatos para tentar aumentar a pontuação.</div><a class="cta" href="https://wa.me/5585991921774?text=Ol%C3%A1!%20Fiz%20o%20simulador%20de%20perfil%20no%20site%20da%20AR%20Visa%20e%20quero%20falar%20com%20um%20especialista." target="_blank" rel="noopener">Fale com um especialista</a><div class="actions"><button class="btn secondary" id="editBtn">Revisar respostas</button><button class="btn primary" id="restartBtn">Nova simulação</button></div>`;
+ document.getElementById('editBtn').onclick=()=>{box.classList.add('hidden');document.getElementById('wizard').classList.remove('hidden');current=steps.length-1;render();};
+ document.getElementById('restartBtn').onclick=()=>{answers={};current=0;box.classList.add('hidden');document.getElementById('wizard').classList.remove('hidden');render();};
+}
+document.getElementById('nextBtn').onclick=()=>{collect();const s=steps[current];const missing=s.fields.find(f=>f.required&&(f.type==='multi'?!(answers[f.id]||[]).length:!answers[f.id]));if(missing){alert('Responda à pergunta: '+missing.q);return;}if(current<steps.length-1){current++;render();window.scrollTo({top:0,behavior:'smooth'});}else showResults();};
+document.getElementById('backBtn').onclick=()=>{collect();if(current>0){current--;render();}};
+render();
+</script>
+</body>
+</html>
