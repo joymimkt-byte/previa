@@ -68,7 +68,7 @@ footer .bt{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;bo
 
 /* v2 */
 .logo small{letter-spacing:.08em}
-nav{gap:24px}
+nav{gap:36px}
 .hero.bg{min-height:640px;display:flex;align-items:center}.hero.bg::before{display:none}
 .hero.bg>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center}
 .hero.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0A0A0B 0,rgba(10,10,11,.88) 38%,rgba(10,10,11,.35) 70%,rgba(10,10,11,.15))}
@@ -106,4 +106,5 @@ nav{gap:24px}
 @media(max-width:1100px){.serv{grid-template-columns:1fr 1fr}.hs .c,.sp,.ad,.ctt{grid-template-columns:1fr}.sp.inv .tx{order:0}.vids,.posts{grid-template-columns:1fr 1fr}}
 @media(max-width:900px){.hero.bg{min-height:0}.hero.bg::after{background:linear-gradient(180deg,rgba(10,10,11,.55),rgba(10,10,11,.92) 55%)}.hero.bg .c{padding-top:200px}.hs .c{padding-top:56px;padding-bottom:56px;gap:36px}.ph{padding:64px 0}.cta2{flex-direction:column;align-items:flex-start;padding:36px 24px}.cta2 .mk{width:140px}.gal.um img{height:340px}.fm,.nc{padding:28px 20px}}
 @media(max-width:560px){.serv,.vids,.posts,.gal{grid-template-columns:1fr}.gal img:first-child{grid-column:auto}}
-@media(max-width:1180px){header .btn{display:none}nav{gap:20px}}@media(max-width:560px){.logo small{display:none}}@media(max-width:1100px){.hs .tx{order:-1}.hs .im{aspect-ratio:16/10}}
+@media(max-width:1180px){nav{gap:24px}}@media(max-width:560px){.logo small{display:none}}@media(max-width:1100px){.hs .tx{order:-1}.hs .im{aspect-ratio:16/10}}
+.logo{margin-right:24px}@media(max-width:1040px){nav{gap:16px}nav>a,.drop>a{font-size:14px}.logo small{display:none}}
