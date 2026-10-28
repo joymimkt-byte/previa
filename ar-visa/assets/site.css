@@ -109,3 +109,4 @@ nav{gap:36px}
 @media(max-width:1180px){nav{gap:24px}}@media(max-width:560px){.logo small{display:none}}@media(max-width:1100px){.hs .tx{order:-1}.hs .im{aspect-ratio:16/10}}
 .logo{margin-right:24px}@media(max-width:1040px){nav{gap:16px}nav>a,.drop>a{font-size:14px}.logo small{display:none}}
 nav .dm a:hover,nav .dm a:focus-visible{background:var(--cinza);color:var(--redb)}nav.ab .dm a:hover{background:rgba(255,255,255,.08);color:#fff}
+.ad img{object-position:center top}
