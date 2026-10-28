@@ -1,0 +1,405 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><style>*,*::before,*::after{box-sizing:border-box}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Plano Handful English</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: coluna editorial única, faixas roxas nos marcos, sumário fixo no topo */
+:root{
+  --roxo:#49305F;--verm:#E8142A;--verde:#5FA836;--claro:#F7F6F8;
+  --bg:#FBFAFC;--fg:#251A31;--muted:#655A72;--line:#E4DFEA;--card:#FFFFFF;--chip:#EFEAF4;
+  --d:'Montserrat',Arial,sans-serif;--b:'Source Sans 3',Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17111D;--fg:#F1ECF6;--muted:#B3A8BF;--line:#33283F;--card:#211A2A;--chip:#2C2236;--verde:#7CCB4E;--verm:#FF4A5A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17111D;--fg:#F1ECF6;--muted:#B3A8BF;--line:#33283F;--card:#211A2A;--chip:#2C2236;--verde:#7CCB4E;--verm:#FF4A5A;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--b)}
+.w{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--d);text-wrap:balance;line-height:1.15;margin:0}
+h2{font-size:clamp(24px,4vw,32px);font-weight:900;color:var(--fg)}
+h3{font-size:18px;font-weight:800}
+p{margin:0;max-width:68ch}
+section{padding-block:44px;border-top:1px solid var(--line)}
+section>.w{display:flex;flex-direction:column;gap:18px}
+.eb{font:800 12px var(--d);letter-spacing:.14em;text-transform:uppercase;color:var(--verde)}
+.hero{background:var(--roxo);color:#fff;padding-block:56px 44px}
+.hero .w{display:flex;flex-direction:column;gap:14px}
+.hero h1{font-size:clamp(34px,7vw,64px);font-weight:900}
+.hero h1 em{font-style:normal;color:#FF5A68}
+.hero p{color:#E6DDF0;font-size:19px}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.meta span{background:rgba(255,255,255,.12);border-radius:99px;padding:4px 12px;font:600 13px var(--d)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+nav .w{display:flex;gap:16px;overflow-x:auto;padding-block:10px;white-space:nowrap}
+nav a{font:700 13px var(--d);color:var(--muted);text-decoration:none}
+nav a:hover,nav a:focus-visible{color:var(--roxo);outline:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.box b{font-family:var(--d)}
+.k{font:900 40px var(--d);color:var(--roxo)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .k{color:#C7A9E6}}
+:root[data-theme="dark"] .k{color:#C7A9E6}
+.bar{display:flex;height:14px;border-radius:7px;overflow:hidden}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:15px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:560px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:800 12px var(--d);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td.d{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
+.tag{display:inline-block;font:800 11px var(--d);letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:2px 9px}
+.reel{background:var(--verm);color:#fff}.arte{background:var(--chip);color:var(--fg)}
+.wk{font:800 14px var(--d);color:var(--roxo);padding-top:18px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .wk{color:#C7A9E6}}
+:root[data-theme="dark"] .wk{color:#C7A9E6}
+.price{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.price .box{border-top:5px solid var(--verde)}
+.price .v{font:900 34px var(--d)}
+ol,ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;max-width:70ch}
+/* trio */
+.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.art{border-radius:12px;overflow:hidden;aspect-ratio:4/5;max-width:100%;position:relative;padding:22px;display:flex;flex-direction:column;gap:8px;font-family:var(--d)}
+.a1{background:#49305F;color:#fff}
+.a1 .n{font-size:84px;font-weight:900;color:#F31529;line-height:.9}
+.a1 .t{font-size:28px;font-weight:900;line-height:1}
+.a1 .t span{color:#75BF43}
+.pill{align-self:flex-start;border-radius:99px;padding:4px 12px;font-weight:800;font-size:11px}
+.ex{background:#fff;border-radius:10px;padding:10px 12px;font-weight:800;font-size:14px;margin-top:auto}
+.ex s{color:#F31529;display:block}.ex span{color:#4E9A2B}
+.a2{background:#F7F6F8;color:#49305F;justify-content:center}
+.a2 .t{font-size:38px;font-weight:900;line-height:1}
+.a2 .t span{color:#F31529}
+.a3{background:linear-gradient(180deg,#8a8a8a,#49305F 70%);color:#fff;aspect-ratio:9/16;justify-content:flex-end}
+.a3 .pill{font-size:17px;padding:6px 14px}
+.cap{display:flex;flex-direction:column;gap:8px;font-size:15px}
+.cap p{color:var(--muted)}
+.ref{columns:2 280px;font-size:14px}
+.ref a{color:var(--roxo);word-break:break-all}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ref a{color:#C7A9E6}}
+:root[data-theme="dark"] .ref a{color:#C7A9E6}
+.note{background:var(--chip);border-radius:12px;padding:16px 18px;font-size:15px}
+.cta{font:900 clamp(24px,4.5vw,40px)/1.15 var(--d);color:var(--roxo)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cta{color:#C7A9E6}}
+:root[data-theme="dark"] .cta{color:#C7A9E6}
+footer{padding-block:32px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+section.s-claro{background:var(--card)}
+section.s-verde{background:color-mix(in srgb,var(--verde) 14%,var(--bg));border-top:0}
+section.s-verde .eb{color:color-mix(in srgb,var(--verde) 65%,var(--fg))}
+section.s-rosa{background:color-mix(in srgb,var(--verm) 9%,var(--bg));border-top:0}
+section.s-rosa .eb{color:var(--verm)}
+section.s-verm{background:#D9122A;color:#fff;border-top:0}
+section.s-verm h2,section.s-verm h3,section.s-verm .eb{color:#fff}
+section.s-verm p,section.s-verm .cap p{color:#FFE9EB}
+section.s-verm mark{background:#49305F}
+section.s-roxo{background:#49305F;color:#fff;border-top:0}
+section.s-roxo h2{color:#fff}section.s-roxo .eb{color:#9EE06F}
+section.s-roxo .box{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#fff}
+section.s-roxo .v{color:#9EE06F}
+mark{background:var(--verde);color:#fff;padding:0 .18em;border-radius:6px}
+.grid>.box{border-top:5px solid var(--roxo)}
+.grid>.box:nth-child(3n+2){border-top-color:var(--verde)}
+.grid>.box:nth-child(3n+3){border-top-color:var(--verm)}
+</style>
+
+</head><body><header class="hero"><div class="w">
+  <span class="eb" style="color:#9EE06F">Instagram · 15/11 a 31/12/2026</span>
+  <h1>Handful English: inglês que dá <em>vontade de aprender</em></h1>
+  <p>Planejamento estratégico de conteúdo para transformar o perfil em um canal que gera interesse, identificação, confiança e matrículas.</p>
+  <div class="meta"><span>5 posts por semana</span><span>35 publicações</span><span>4 diárias de gravação</span><span>Trio de Ouro no Figma</span></div>
+</div></header>
+
+<nav aria-label="Sumário"><div class="w">
+  <a href="#estrategia">Estratégia</a><a href="#pilares">Pilares</a><a href="#visual">Identidade</a><a href="#trio">Trio de Ouro</a><a href="#calendario">Calendário</a><a href="#reels">Roteiros</a><a href="#gravacao">Gravação</a><a href="#stories">Stories</a><a href="#conversao">Conversão</a><a href="#indicadores">Indicadores</a><a href="#checklist">Checklist</a><a href="#investimento">Investimento</a><a href="#referencias">Referências</a>
+</div></nav>
+
+<section id="estrategia" class="s-claro"><div class="w">
+  <span class="eb">01 · Direcionamento</span>
+  <h2>O que o perfil precisa entregar</h2>
+  <p>Comunicação com personalidade, atual, divertida e compartilhável, sem virar página de memes ou de dicas genéricas. A Handful precisa ser percebida como uma escola que ensina de verdade, tem metodologia própria e aproxima o inglês da vida real.</p>
+  <div class="grid">
+    <div class="box"><b>Objetivo</b>Gerar reconhecimento, desejo de aprender e oportunidades de matrícula.</div>
+    <div class="box"><b>Posicionamento</b>Escola acessível, humana, moderna e comprometida com a evolução dos alunos.</div>
+    <div class="box"><b>Linguagem</b>Natural, dinâmica, bem-humorada, educativa e visualmente consistente.</div>
+    <div class="box"><b>Resultado esperado</b>Alcance qualificado, salvamentos, compartilhamentos e conversas sobre cursos.</div>
+  </div>
+  <h3>Frequência e distribuição editorial</h3>
+  <div class="grid">
+    <div class="box"><span class="k">3</span>artes ou carrosséis por semana (seg, qua, sex)</div>
+    <div class="box"><span class="k">2</span>Reels por semana (ter, qui)</div>
+    <div class="box"><span class="k">5</span>publicações semanais no feed</div>
+  </div>
+  <div class="bar" role="img" aria-label="Ensino 35%, Entretenimento 25%, Essência 25%, Conversão 15%">
+    <span style="width:35%;background:#49305F"></span><span style="width:25%;background:#75BF43"></span><span style="width:25%;background:#B79BD3"></span><span style="width:15%;background:#F31529"></span>
+  </div>
+  <div class="legend"><span><i style="background:#49305F"></i>Ensino e autoridade 35%</span><span><i style="background:#75BF43"></i>Entretenimento e alcance 25%</span><span><i style="background:#B79BD3"></i>Essência e bastidores 25%</span><span><i style="background:#F31529"></i>Conversão e matrículas 15%</span></div>
+  <p style="color:var(--muted);font-size:15px">A proporção é referência, não regra semanal. Um Reel pode ensinar vocabulário e mostrar a personalidade de um professor ao mesmo tempo.</p>
+</div></section>
+
+<section id="pilares" class="s-verde"><div class="w">
+  <span class="eb">02 · Conteúdo</span>
+  <h2>Cinco pilares e o <mark>diferencial</mark> da Handful</h2>
+  <div class="grid">
+    <div class="box"><b>Inglês que você realmente usa</b>Erros comuns, pronúncia, gramática prática, expressões naturais, falsos cognatos e inglês para viagem.</div>
+    <div class="box"><b>Inglês com humor</b>Trends e situações que as pessoas queiram mandar para amigos: inglês da escola versus inglês da vida real.</div>
+    <div class="box"><b>Por dentro da Handful</b>Professores, alunos, rotina e aulas. O público passa a se imaginar ali.</div>
+    <div class="box"><b>Evolução real</b>Conquistas, depoimentos e pequenas vitórias, sem depender de post comercial o tempo todo.</div>
+    <div class="box"><b>Inglês abre portas</b>Carreira, viagens e objetivos pessoais, sempre conectados à proposta real de ensino.</div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Diferencial</th><th>Como vira conteúdo</th></tr></thead>
+    <tbody>
+      <tr><td>Conversação desde o início (Express Yourself)</td><td>Exercício real de speaking em sala</td></tr>
+      <tr><td>Metodologia prática</td><td>Decorar frases versus usar em situações reais</td></tr>
+      <tr><td>Professores experientes</td><td>Quadros fixos com rostos recorrentes</td></tr>
+      <tr><td>Turmas e interação</td><td>Dinâmicas, desafios e conversas</td></tr>
+      <tr><td>Presencial na Cinelândia e online ao vivo</td><td>Como funciona uma aula remota</td></tr>
+      <tr><td>Teste de nivelamento</td><td>Desafios com convite para o teste oficial</td></tr>
+      <tr><td>Parceria histórica com o VLT Carioca</td><td>Peça institucional de credibilidade, se houver autorização de uso</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Quadros fixos</h3>
+  <div class="grid">
+    <div class="box"><b>Inglês sem tradução literal</b>Reels e carrosséis: “I have 25 years” versus “I'm 25 years old”.</div>
+    <div class="box"><b>Handful Challenge</b>Professores e alunos respondem; o público tenta antes da revelação.</div>
+    <div class="box"><b>Inglês em 30 segundos</b>Uma dúvida, uma explicação, um exemplo.</div>
+    <div class="box"><b>Inside Handful</b>Bastidores, rotina e relatos de alunos.</div>
+    <div class="box"><b>Você sabe a resposta?</b>Carrossel interativo com a resposta explicada no final.</div>
+  </div>
+</div></section>
+
+<section id="visual"><div class="w">
+  <span class="eb">03 · Identidade</span>
+  <h2>Modernizar a apresentação sem descaracterizar a marca</h2>
+  <div class="grid">
+    <div class="box"><div style="height:44px;border-radius:8px;background:#49305F"></div><b>Roxo institucional</b><code>#49305F</code>Fundos, títulos, capas e autoridade.</div>
+    <div class="box"><div style="height:44px;border-radius:8px;background:#F31529"></div><b>Vermelho vibrante</b><code>#F31529</code>Chamadas e palavras de destaque.</div>
+    <div class="box"><div style="height:44px;border-radius:8px;background:#75BF43"></div><b>Verde Handful</b><code>#75BF43</code>Respostas corretas, desafios e quizzes.</div>
+    <div class="box"><div style="height:44px;border-radius:8px;background:#F7F6F8;border:1px solid var(--line)"></div><b>Branco suave</b><code>#F7F6F8</code>Respiro visual.</div>
+  </div>
+  <p class="note">Cores estimadas a partir da logo e do feed. Para a produção definitiva, é preciso receber o manual da marca ou o arquivo vetorial da logo com os códigos oficiais.</p>
+  <div class="grid">
+    <div class="box"><b>Estilo 1 · Educativo e impactante</b>Fundo roxo, título branco, verde nos acertos e vermelho nos pontos de impacto. Para carrosséis e desafios.</div>
+    <div class="box"><b>Estilo 2 · Minimalista e institucional</b>Fundo claro, tipografia forte e poucos elementos. Para posicionamento e conversão.</div>
+    <div class="box"><b>Estilo 3 · Humano e espontâneo</b>Fotos reais, títulos grandes e etiquetas coloridas, como as que já existem no feed. Para capas de Reels.</div>
+  </div>
+  <div class="grid">
+    <div class="box"><b>Manter</b>Logo original, três cores institucionais, pessoas reais, depoimentos e linguagem acessível.</div>
+    <div class="box"><b>Melhorar</b>Padrão de capas, hierarquia tipográfica, equilíbrio de cores, consistência dos carrosséis e organização do feed.</div>
+  </div>
+  <h3>Regras criativas</h3>
+  <ul>
+    <li>Capa com frase que desperta curiosidade, nunca “Dica de inglês”.</li>
+    <li>Gancho do Reel nos dois primeiros segundos.</li>
+    <li>Humor ligado ao aprendizado, sem ridicularizar o nível de nenhum aluno.</li>
+    <li>Professores como personagens recorrentes.</li>
+    <li>Inglês correto e revisado por um professor antes de publicar.</li>
+    <li>CTA coerente com o objetivo: comentar, salvar, compartilhar ou pedir informações.</li>
+  </ul>
+</div></section>
+
+<section id="trio" class="s-verm"><div class="w">
+  <span class="eb">04 · Peças piloto</span>
+  <h2>Trio de <mark>Ouro</mark></h2>
+  <p>Três peças, três estilos e três funções: uma para salvamento, uma para conexão e conversão, uma para alcance. Elas validam a nova direção estética antes de aplicar o padrão a novembro e dezembro. Os arquivos editáveis estão no Figma.</p>
+  <div class="trio">
+    <div class="cap">
+      <div class="art a1"><span class="pill" style="background:#75BF43;color:#49305F">INGLÊS SEM TRADUÇÃO LITERAL</span><span class="n">5</span><span class="t">FRASES QUE VOCÊ TRADUZ <span>ERRADO</span></span><small>e nem percebe.</small><div class="ex"><s>✕ I have 25 years.</s><span>✓ I'm 25 years old.</span></div></div>
+      <h3>1 · Carrossel educativo (16/11)</h3>
+      <p><b>Slides:</b> 2) I have 25 years → I'm 25 years old (idade usa o verbo to be). 3) I'm agree → I agree (agree já é verbo). 4) Make a question → Ask a question. 5) I pretend to travel → I intend to travel (pretend significa fingir). 6) She is married with John → She is married to John. 7) CTA: treine inglês em situações reais na Handful.</p>
+      <p><b>Legenda:</b> Tradução literal é a armadilha mais comum de quem estuda inglês. Você conhece a regra, mas a frase sai em português com palavras em inglês. Arraste e confira 5 frases que entregam o brasileiro. Salve para revisar antes da próxima conversa. Qual delas você já falou?</p>
+    </div>
+    <div class="cap">
+      <div class="art a2"><span class="pill" style="background:#49305F;color:#fff">Handful English</span><span class="t">Ninguém começa <span>fluente.</span></span><small style="font-family:var(--b);font-size:14px">A fluência nasce da conversa. Na Handful, você fala inglês desde a primeira aula.</small><span class="pill" style="background:#49305F;color:#fff;font-size:13px">Faça seu teste de nível</span></div>
+      <h3>2 · Arte institucional (18/11)</h3>
+      <p><b>Legenda:</b> Todo mundo que hoje fala inglês com confiança já travou, errou e recomeçou. A fluência não aparece antes da primeira conversa; ela nasce dela. Na Handful, você fala desde a primeira aula, na Cinelândia ou online ao vivo. Quer descobrir seu nível? Chame no direct ou acesse o link da bio.</p>
+    </div>
+    <div class="cap">
+      <div class="art a3"><span class="pill" style="background:#fff;color:#49305F;font-size:12px">QUEM NUNCA?</span><span class="pill" style="background:#75BF43;color:#49305F">ENTENDO TUDO...</span><span class="pill" style="background:#F31529">MAS TRAVO NA</span><span class="pill" style="background:#fff;color:#49305F">HORA DE FALAR</span></div>
+      <h3>3 · Capa de Reel (17/11)</h3>
+      <p><b>Foto:</b> professor e aluno reais, com a expressão de quem travou. Texto dentro da área segura do grid.</p>
+      <p><b>Legenda:</b> Você entende a pergunta, monta a resposta na cabeça e trava. Acontece com muita gente, e tem solução: estruturas simples destravam a conversa. Marque aquele amigo que entende tudo, mas trava na hora de falar.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="calendario"><div class="w">
+  <span class="eb">05 · Calendário</span>
+  <h2><mark>35 publicações</mark> de 15/11 a 31/12</h2>
+  <p>Grade fixa: segunda carrossel educativo, terça Reel de humor, quarta arte institucional, quinta Reel de desafio ou bastidor, sexta carrossel interativo ou cultural. A semana 1 foi aprovada no planejamento; as demais são proposta de pauta para validação.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Data</th><th>Pauta</th><th>Formato</th><th>Objetivo</th></tr></thead>
+    <tbody>
+      <tr><td colspan="4" class="wk">15 a 20/11 · Apresentação e conexão</td></tr>
+      <tr><td class="d">15/11 dom</td><td>Welcome to Handful: abertura da nova fase editorial</td><td><span class="tag arte">Arte</span></td><td>Institucional</td></tr>
+      <tr><td class="d">16/11 seg</td><td>5 frases em inglês que você traduz errado</td><td><span class="tag arte">Carrossel</span></td><td>Salvamentos</td></tr>
+      <tr><td class="d">17/11 ter</td><td>Quando você entende inglês, mas trava na hora de falar</td><td><span class="tag reel">Reel</span></td><td>Alcance</td></tr>
+      <tr><td class="d">18/11 qua</td><td>Ninguém começa fluente</td><td><span class="tag arte">Arte</span></td><td>Conexão</td></tr>
+      <tr><td class="d">19/11 qui</td><td>Como é uma aula de verdade na Handful?</td><td><span class="tag reel">Reel</span></td><td>Confiança</td></tr>
+      <tr><td class="d">20/11 sex</td><td>Consciência Negra: referências culturais negras do universo anglófono</td><td><span class="tag arte">Carrossel</span></td><td>Educação</td></tr>
+      <tr><td colspan="4" class="wk">23 a 27/11 · Identificação e Black Friday</td></tr>
+      <tr><td class="d">23/11 seg</td><td>Falsos cognatos que confundem até quem estuda há anos</td><td><span class="tag arte">Carrossel</span></td><td>Salvamentos</td></tr>
+      <tr><td class="d">24/11 ter</td><td>O tradutor oficial da família</td><td><span class="tag reel">Reel</span></td><td>Compartilhamento</td></tr>
+      <tr><td class="d">25/11 qua</td><td>Conheça quem vai ouvir você falar: os professores</td><td><span class="tag arte">Arte</span></td><td>Conexão</td></tr>
+      <tr><td class="d">26/11 qui</td><td>Handful Challenge: go ou goes?</td><td><span class="tag reel">Reel</span></td><td>Interação</td></tr>
+      <tr><td class="d">27/11 sex</td><td>Você sabe a resposta? Black Friday em inglês</td><td><span class="tag arte">Carrossel</span></td><td>Interação</td></tr>
+      <tr><td colspan="4" class="wk">30/11 a 4/12 · Viagem e método</td></tr>
+      <tr><td class="d">30/11 seg</td><td>6 frases que salvam no aeroporto</td><td><span class="tag arte">Carrossel</span></td><td>Salvamentos</td></tr>
+      <tr><td class="d">1/12 ter</td><td>Inglês da escola versus inglês da cafeteria</td><td><span class="tag reel">Reel</span></td><td>Alcance</td></tr>
+      <tr><td class="d">2/12 qua</td><td>Depoimento de aluno: a decisão que mudou tudo</td><td><span class="tag arte">Arte</span></td><td>Prova social</td></tr>
+      <tr><td class="d">3/12 qui</td><td>Inglês em 30 segundos: make ou do?</td><td><span class="tag reel">Reel</span></td><td>Autoridade</td></tr>
+      <tr><td class="d">4/12 sex</td><td>Express Yourself: como funciona a metodologia</td><td><span class="tag arte">Carrossel</span></td><td>Consideração</td></tr>
+      <tr><td colspan="4" class="wk">7 a 11/12 · Pronúncia e experiência</td></tr>
+      <tr><td class="d">7/12 seg</td><td>Palavras que o brasileiro pronuncia errado</td><td><span class="tag arte">Carrossel</span></td><td>Salvamentos</td></tr>
+      <tr><td class="d">8/12 ter</td><td>Desafio de pronúncia com alunos e professores</td><td><span class="tag reel">Reel</span></td><td>Alcance</td></tr>
+      <tr><td class="d">9/12 qua</td><td>Aula online ao vivo: aprenda de onde estiver</td><td><span class="tag arte">Arte</span></td><td>Conversão</td></tr>
+      <tr><td class="d">10/12 qui</td><td>Inside Handful: um dia na Cinelândia</td><td><span class="tag reel">Reel</span></td><td>Confiança</td></tr>
+      <tr><td class="d">11/12 sex</td><td>Você sabe a resposta? Simple past ou present perfect</td><td><span class="tag arte">Carrossel</span></td><td>Interação</td></tr>
+      <tr><td colspan="4" class="wk">14 a 18/12 · Carreira e viagem</td></tr>
+      <tr><td class="d">14/12 seg</td><td>Inglês para entrevista de emprego</td><td><span class="tag arte">Carrossel</span></td><td>Salvamentos</td></tr>
+      <tr><td class="d">15/12 ter</td><td>Handful Challenge: edição viagem</td><td><span class="tag reel">Reel</span></td><td>Interação</td></tr>
+      <tr><td class="d">16/12 qua</td><td>Descubra seu nível antes de 2027</td><td><span class="tag arte">Arte</span></td><td>Conversão</td></tr>
+      <tr><td class="d">17/12 qui</td><td>Quando o gringo fala rápido demais</td><td><span class="tag reel">Reel</span></td><td>Alcance</td></tr>
+      <tr><td class="d">18/12 sex</td><td>Vocabulário de Natal que ninguém te ensinou</td><td><span class="tag arte">Carrossel</span></td><td>Educação</td></tr>
+      <tr><td colspan="4" class="wk">21 a 25/12 · Natal</td></tr>
+      <tr><td class="d">21/12 seg</td><td>Como desejar boas festas em inglês sem soar robótico</td><td><span class="tag arte">Carrossel</span></td><td>Salvamentos</td></tr>
+      <tr><td class="d">22/12 ter</td><td>Amigo secreto em inglês</td><td><span class="tag reel">Reel</span></td><td>Compartilhamento</td></tr>
+      <tr><td class="d">23/12 qua</td><td>Conquistas dos alunos em 2026</td><td><span class="tag arte">Arte</span></td><td>Prova social</td></tr>
+      <tr><td class="d">24/12 qui</td><td>Mensagem de Natal dos professores</td><td><span class="tag reel">Reel</span></td><td>Conexão</td></tr>
+      <tr><td class="d">25/12 sex</td><td>Merry Christmas (agendada com antecedência)</td><td><span class="tag arte">Arte</span></td><td>Institucional</td></tr>
+      <tr><td colspan="4" class="wk">28 a 31/12 · Ponte para janeiro</td></tr>
+      <tr><td class="d">28/12 seg</td><td>Metas de inglês para 2027 que cabem na rotina</td><td><span class="tag arte">Carrossel</span></td><td>Salvamentos</td></tr>
+      <tr><td class="d">29/12 ter</td><td>Retrospectiva Handful 2026</td><td><span class="tag reel">Reel</span></td><td>Conexão</td></tr>
+      <tr><td class="d">30/12 qua</td><td>Em 2027, tire o inglês dos planos e coloque na sua vida</td><td><span class="tag arte">Arte</span></td><td>Conversão</td></tr>
+      <tr><td class="d">31/12 qui</td><td>Happy New Year da equipe Handful</td><td><span class="tag reel">Reel</span></td><td>Conexão</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section id="reels" class="s-rosa"><div class="w">
+  <span class="eb">06 · Roteiros</span>
+  <h2>Reels com potencial de compartilhamento</h2>
+  <p>Três estruturas: humor com aprendizado, desafio com participação e bastidor com narrativa. A meta é adaptar a mecânica dos virais ao universo da escola, nunca copiar a execução.</p>
+  <div class="grid">
+    <div class="box"><b>Reel 1 · O aluno que entende, mas não fala</b><small>Humor e identificação · 20 a 30 s</small>
+      <ol><li>Professor: “What did you do last weekend?”</li><li>Pensamento do aluno: “Eu entendi tudo!”</li><li>O aluno tenta responder e trava.</li><li>Professor oferece a estrutura: “I went to...”</li><li>O aluno completa a resposta.</li></ol>
+      <p><b>Fechamento:</b> você não precisa esperar o inglês ficar perfeito para conversar.<br><b>CTA:</b> manda para aquele amigo que entende tudo, mas trava.</p></div>
+    <div class="box"><b>Reel 2 · Handful Challenge</b><small>Interação · 15 a 25 s</small>
+      <ol><li>“Você tem 3 segundos para responder!”</li><li>Na tela: “She ___ to work every day.”</li><li>Opções: go ou goes.</li><li>Contagem regressiva.</li><li>Resposta: goes, terceira pessoa do singular no simple present.</li></ol>
+      <p><b>CTA:</b> acertou de primeira? Comenta aqui.</p></div>
+    <div class="box"><b>Reel 3 · Uma aula por dentro</b><small>Essência e credibilidade · 25 a 40 s</small>
+      <ol><li>Entrada na escola e recepção.</li><li>Professor prepara a atividade.</li><li>Alunos em conversação.</li><li>Close em uma dinâmica.</li><li>Depoimento curto de aluno.</li><li>Mensagem sobre aprender na prática.</li></ol>
+      <p><b>CTA:</b> quer conhecer a metodologia? Fale com a Handful.</p></div>
+    <div class="box"><b>Reel 4 · O tradutor oficial da família</b><small>Humor e compartilhamento · 20 a 30 s</small>
+      <ol><li>Família chega ao aeroporto.</li><li>Atendente pergunta algo em inglês.</li><li>Todos olham para quem estuda inglês.</li><li>A pessoa responde e vira tradutora de tudo.</li><li>Frase útil: “Where can I check in?”</li></ol>
+      <p><b>CTA:</b> quem é o tradutor oficial da sua família?</p></div>
+  </div>
+</div></section>
+
+<section id="gravacao" class="s-verde"><div class="w">
+  <span class="eb">07 · Produção</span>
+  <h2>Gravações quinzenais, <mark>sempre às sextas</mark></h2>
+  <div class="grid">
+    <div class="box"><span class="k">6/11</span><b>Primeira gravação</b>Reels de 17, 19, 24 e 26/11, professores e escola.</div>
+    <div class="box"><span class="k">20/11</span><b>Segunda gravação</b>Reels de 1, 3, 8 e 10/12.</div>
+    <div class="box"><span class="k">4/12</span><b>Terceira gravação</b>Reels de 15, 17, 22 e 24/12 e Natal.</div>
+    <div class="box"><span class="k">18/12</span><b>Quarta gravação</b>Reels de 29 e 31/12 e retrospectiva.</div>
+  </div>
+  <p>Cada diária tem cerca de 3 horas e entrega 4 Reels, vídeos curtos para Stories e fotos de apoio. Nenhuma aula é interrompida e todo aluno participa com termo de uso de imagem.</p>
+</div></section>
+
+<section id="stories" class="s-claro"><div class="w">
+  <span class="eb">08 · Stories</span>
+  <h2>Extensão do calendário, não repost do feed</h2>
+  <p>Presença em pelo menos cinco dias por semana, com três a seis Stories por dia ativo e uma chamada comercial direta por semana (“Quer descobrir seu nível de inglês?”).</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Dia</th><th>Conteúdo</th></tr></thead>
+    <tbody>
+      <tr><td class="d">Segunda</td><td>Quiz de vocabulário ou gramática</td></tr>
+      <tr><td class="d">Terça</td><td>Bastidores e divulgação do Reel</td></tr>
+      <tr><td class="d">Quarta</td><td>Enquete sobre dificuldades com inglês</td></tr>
+      <tr><td class="d">Quinta</td><td>Professor responde uma dúvida</td></tr>
+      <tr><td class="d">Sexta</td><td>Rotina, depoimento ou convite ao teste de nível</td></tr>
+    </tbody>
+  </table></div>
+  <p><b>Destaques:</b> Comece Aqui, Método, Aulas, Professores, Alunos, Resultados e Matrículas.</p>
+</div></section>
+
+<section id="conversao" class="s-rosa"><div class="w">
+  <span class="eb">09 · Conversão</span>
+  <h2>Do Reel à <mark>matrícula</mark></h2>
+  <div class="grid">
+    <div class="box"><b>Descoberta</b>Reels e carrosséis compartilháveis</div>
+    <div class="box"><b>Conexão</b>Bastidores, professores e alunos</div>
+    <div class="box"><b>Consideração</b>Metodologia, depoimentos e aula demonstrativa</div>
+    <div class="box"><b>Conversão</b>Teste de nível, WhatsApp e matrícula</div>
+  </div>
+  <p>A bio explica o que a Handful oferece, onde atende e qual o próximo passo. O link principal leva ao teste de nível ou ao atendimento, com UTMs separadas para bio, Stories e campanhas.</p>
+</div></section>
+
+<section id="indicadores" class="s-claro"><div class="w">
+  <span class="eb">10 · Indicadores</span>
+  <h2>Linha de base antes de metas</h2>
+  <p>Metas de visualizações e seguidores só depois da análise dos últimos 90 dias do perfil.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Indicador</th><th>O que revela</th></tr></thead>
+    <tbody>
+      <tr><td>Alcance de não seguidores</td><td>Capacidade de descoberta</td></tr>
+      <tr><td>Compartilhamentos por alcance</td><td>Potencial de distribuição</td></tr>
+      <tr><td>Salvamentos por alcance</td><td>Valor educativo</td></tr>
+      <tr><td>Tempo médio de visualização</td><td>Qualidade dos Reels</td></tr>
+      <tr><td>Visitas ao perfil</td><td>Interesse gerado</td></tr>
+      <tr><td>Cliques no link e conversas</td><td>Intenção comercial</td></tr>
+      <tr><td>Leads e matrículas atribuídas</td><td>Resultado para o negócio</td></tr>
+    </tbody>
+  </table></div>
+  <p><b>Semanal:</b> ganchos e formatos com mais retenção. <b>Quinzenal:</b> ajuste dos roteiros da próxima gravação. <b>Mensal:</b> evolução do perfil e oportunidades comerciais geradas.</p>
+</div></section>
+
+<section id="checklist" class="s-verde"><div class="w">
+  <span class="eb">11 · Próximos passos</span>
+  <h2>Checklist de produção</h2>
+  <ol>
+    <li>Validar diferenciais, modalidades, condições comerciais e números de alunos formados.</li>
+    <li>Enviar manual da marca e logo em vetor.</li>
+    <li>Aprovar o Trio de Ouro.</li>
+    <li>Definir os professores dos quadros fixos.</li>
+    <li>Confirmar alunos voluntários e termos de uso de imagem.</li>
+    <li>Aprovar calendário e roteiros de novembro.</li>
+    <li>Reservar datas de gravação e ambientes.</li>
+    <li>Preparar templates de capas, carrosséis e legendas.</li>
+    <li>Configurar UTMs, leads e indicadores.</li>
+    <li>Agendar revisão quinzenal de desempenho.</li>
+  </ol>
+  <p class="cta">Em 2027, tire o inglês dos planos e coloque na sua vida.</p>
+  <p>A última semana de dezembro prepara a campanha de matrículas de janeiro, desde que turmas, vagas e condições sejam confirmadas pela escola.</p>
+</div></section>
+
+<section id="investimento" class="s-roxo"><div class="w">
+  <span class="eb">12 · Investimento</span>
+  <h2>Valores mensais</h2>
+  <div class="price">
+    <div class="box"><b>Novembro e dezembro de 2026</b><span class="v">R$ 400<small style="font-size:16px">/mês</small></span>Produção e gravação dos conteúdos publicados em novembro e dezembro.</div>
+    <div class="box"><b>A partir de janeiro de 2027</b><span class="v">R$ 500<small style="font-size:16px">/mês</small></span>Valor mensal recorrente.</div>
+  </div>
+</div></section>
+
+<section id="referencias"><div class="w">
+  <span class="eb">13 · Referências</span>
+  <h2>Reels de referência</h2>
+  <p>Base criativa dos conteúdos. Cada um deve ser classificado na pré-produção por gancho, tipo de humor, duração, personagens, áudio, edição e adaptação pedagógica.</p>
+  <ol class="ref">
+    <li><a href="https://www.instagram.com/reel/De-FzQRkriT/">instagram.com/reel/De-FzQRkriT</a></li>
+    <li><a href="https://www.instagram.com/reel/DecnhjPhmyE/">instagram.com/reel/DecnhjPhmyE</a></li>
+    <li><a href="https://www.instagram.com/p/DczGTBhjhgU/">instagram.com/p/DczGTBhjhgU</a></li>
+    <li><a href="https://www.instagram.com/reel/ChTAJUDjfCd/">instagram.com/reel/ChTAJUDjfCd</a></li>
+    <li><a href="https://www.instagram.com/reel/DHpECpoOaej/">instagram.com/reel/DHpECpoOaej</a></li>
+    <li><a href="https://www.instagram.com/reel/DVLUBD-DuT3/">instagram.com/reel/DVLUBD-DuT3</a></li>
+    <li><a href="https://www.instagram.com/reel/DZdZ4u5sx4W/">instagram.com/reel/DZdZ4u5sx4W</a></li>
+    <li><a href="https://www.instagram.com/reel/DX7cGt6PPMf/">instagram.com/reel/DX7cGt6PPMf</a></li>
+    <li><a href="https://www.instagram.com/reel/DdCEMoRRasr/">instagram.com/reel/DdCEMoRRasr</a></li>
+    <li><a href="https://www.instagram.com/reel/DQXjSG-jAUX/">instagram.com/reel/DQXjSG-jAUX</a></li>
+    <li><a href="https://www.instagram.com/reel/DY92YvkudqW/">instagram.com/reel/DY92YvkudqW</a></li>
+  </ol>
+</div></section>
+
+<footer><div class="w">Agência Papo Criativo · Planejamento Handful English · outubro de 2026</div></footer>
+</body></html>
