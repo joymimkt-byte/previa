@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --wine:#471021;--wine-2:#2E0A15;--gold:#CEBB93;--gold-d:#A2803B;--gold-l:#E7D9BC;
+  --wine:#471021;--wine-2:#2E0A15;--gold:#CEBB93;--gold-d:#A2803B;--gold-l:#FDE4B8;
   --beige:#F8F3EE;--beige-2:#EFE4D6;--ink:#2A0A15;--text:#5E4C52;--line:#E3D5C2;--white:#FFFDF9;
   --serif:'Cormorant Garamond',Georgia,serif;--sans:'Poppins',system-ui,sans-serif;
 }
@@ -31,7 +31,12 @@ section{padding:clamp(64px,9vw,112px) 0}
   background:linear-gradient(180deg,#E2C575 0%,#C9A247 100%);color:#2A0A15;font-weight:600;font-size:14px;letter-spacing:.02em;
   padding:17px 30px;border-radius:2px;border:1px solid #C9A247;box-shadow:0 8px 20px -12px rgba(150,110,30,.6);
   transition:transform .3s,box-shadow .3s,filter .3s;text-align:center}
-.btn:hover{transform:translateY(-2px);filter:brightness(1.06);box-shadow:0 14px 28px -14px rgba(150,110,30,.8)}
+.btn:not(.btn-line){animation:pulse 2.6s ease-in-out infinite}
+.btn:not(.btn-line)::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;pointer-events:none;
+  background:linear-gradient(110deg,transparent,rgba(255,250,230,.55),transparent);transform:skewX(-20deg);animation:shine 5s ease-in-out infinite}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06);animation-play-state:paused}
+@keyframes pulse{0%,100%{box-shadow:0 8px 20px -12px rgba(150,110,30,.6),0 0 0 0 rgba(201,162,71,.45)}60%{box-shadow:0 8px 20px -12px rgba(150,110,30,.6),0 0 0 9px rgba(201,162,71,0)}}
+@keyframes shine{0%,70%{left:-60%}90%,100%{left:130%}}
 .btn svg{width:18px;height:18px;flex:none}
 .btn .arr{transition:transform .3s}.btn:hover .arr{transform:translateX(4px)}
 .btn-line{background:transparent;color:var(--wine);border:1px solid #C9A247;box-shadow:none}
@@ -122,8 +127,10 @@ header.scrolled{background:rgba(46,10,21,.96);backdrop-filter:blur(8px);padding:
 .avatar{width:40px;height:40px;border-radius:50%;background:var(--beige-2);display:grid;place-items:center;font-family:var(--serif);font-size:20px;color:var(--wine)}
 .review b{display:block;color:var(--ink);font-size:14px;font-weight:600}
 .stars{color:var(--gold-d);letter-spacing:2px;font-size:12px}
-.review p{font-size:14px}
+.review p{font-size:14px;white-space:pre-line}
 .arrows{display:flex;gap:10px}
+.glink{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-size:14px;font-weight:500;color:var(--wine);border-bottom:1px solid var(--gold-d);padding-bottom:2px;transition:color .3s}
+.glink svg{width:16px;height:16px}.glink:hover{color:var(--gold-d)}
 .arrows button{width:46px;height:46px;border:1px solid var(--gold-d);background:transparent;color:var(--wine);cursor:pointer;font-size:18px;transition:.3s}
 .arrows button:hover{background:var(--gold)}
 
@@ -153,7 +160,17 @@ details p{padding:0 24px 22px;font-size:14px;animation:fade .4s ease}
 .contacts a,.contacts span{font-size:14px;color:#D9C9B6;border-bottom:1px solid transparent;transition:.3s}
 .contacts a:hover{color:var(--gold);border-color:var(--gold)}
 .map{position:relative;min-height:420px;background:#E9DFD2;display:block;overflow:hidden}
-.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map{color:var(--ink)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:62%;top:44%;transform:translate(-50%,-100%)}
+.pin i{display:block;width:20px;height:20px;background:var(--wine);border:3px solid var(--gold);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 8px 16px -6px rgba(0,0,0,.45)}
+.pin::after{content:"";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;border:1px solid var(--wine);animation:ping 2.4s ease-out infinite}
+@keyframes ping{from{transform:scale(.6);opacity:.7}to{transform:scale(3);opacity:0}}
+.map .label{position:absolute;left:62%;top:calc(44% + 18px);transform:translateX(-50%);background:var(--white);font-size:13px;padding:12px 18px;white-space:nowrap;box-shadow:0 14px 30px -18px rgba(46,10,21,.45);border-top:2px solid var(--gold)}
+.map .label b{display:block;font-family:var(--serif);font-size:18px;color:var(--wine);font-weight:600}
+.map .open{position:absolute;right:20px;bottom:18px;display:flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.06em;color:var(--wine);border-bottom:1px solid var(--gold-d);padding-bottom:2px}
+.map .open svg{position:static;width:14px;height:14px}
+.map:hover .open{color:var(--gold-d)}
 
 /* Footer */
 footer{background:var(--beige-2);padding:56px 0 32px;font-size:13px}
@@ -220,7 +237,6 @@ footer .menu{color:var(--text)}
     <nav class="menu" id="menu">
       <a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#processo">Como funciona</a><a href="#avaliacoes">Avaliações</a><a href="#faq">FAQ</a><a href="#contato">Contato</a>
     </nav>
-    <a class="btn" data-wa="Olá, Dra. Isadora. Quero saber meus direitos sobre o atraso do meu imóvel na planta." href="#">Quero saber meus direitos</a>
     <button class="burger" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('open')"><i></i><i></i></button>
   </div>
 </header>
@@ -263,7 +279,6 @@ footer .menu{color:var(--text)}
       <span class="eyebrow reveal">Quando buscar orientação</span>
       <h2 class="reveal d1">Situações que merecem uma análise jurídica</h2>
       <p class="reveal d2">Cada contrato e cada obra têm particularidades. A análise da documentação é essencial para indicar os caminhos mais adequados.</p>
-      <a class="btn reveal d3" data-wa="Olá, Dra. Isadora. Quero saber meus direitos sobre o atraso do meu imóvel na planta." href="#">Quero saber meus direitos <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="cards">
       <div class="card reveal"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></svg><h3>Prazo de entrega vencido</h3><p>E obra sem previsão de conclusão.</p></div>
@@ -278,7 +293,7 @@ footer .menu{color:var(--text)}
 
 <section class="process" id="processo">
   <div class="wrap">
-    <h2 class="reveal">Como funciona o processo para quem tem obra atrasada</h2>
+    <h2 class="reveal">Como funciona o processo para quem tem obra parada</h2>
     <div class="steps">
       <div class="step reveal"><span class="num">01</span><h3>Análise do contrato e do atraso</h3><p>Você envia o contrato, a data de entrega prometida, o histórico de pagamentos e as comunicações da construtora.</p></div>
       <div class="step reveal d1"><span class="num">02</span><h3>Viabilidade</h3><p>A Dra. Isadora Catarina analisa cada aspecto do atraso e explica, em linguagem simples, os direitos que você tem.</p></div>
@@ -310,7 +325,7 @@ footer .menu{color:var(--text)}
       <div class="arrows reveal"><button aria-label="Anterior" data-dir="-1">&#8592;</button><button aria-label="Próxima" data-dir="1">&#8594;</button></div>
     </div>
     <div class="track" id="track"></div>
-    <a class="btn btn-line reveal" style="margin-top:28px" href="https://maps.app.goo.gl/hWK2W9x1eAuRAmsd8" target="_blank" rel="noopener">Ver todas as avaliações no Google <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="glink reveal" href="https://www.google.com/maps/place/Advogado+Imobili%C3%A1rio+SP+e+Grande+ABC+-+Isadora+Catarina+Advocacia/@-23.561093,-46.6589902,17z/data=!4m8!3m7!1s0x94ce5906895f85df:0x6c5332cc490a857c!8m2!3d-23.561093!4d-46.6564153!9m1!1b1!16s%2Fg%2F11yc9csv4d" target="_blank" rel="noopener">Ver todas as avaliações no Google <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
@@ -341,13 +356,26 @@ footer .menu{color:var(--text)}
       <p class="lead reveal d1">Envie suas informações e tire suas dúvidas sobre atraso na entrega de imóvel na planta, com atendimento direto da Dra. Isadora.</p>
       <a class="btn reveal d2" data-wa="Olá, Dra. Isadora. Solicito a análise contratual do meu caso." href="#">Solicito a análise contratual do meu caso <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <ul class="contacts reveal d3">
-        <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><div><b>Atendimento em São Paulo/SP</b><a href="https://maps.app.goo.gl/hWK2W9x1eAuRAmsd8" target="_blank" rel="noopener">Av. Paulista, 1636, Cerqueira César, São Paulo/SP</a></div></li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><div><b>Escritório em São Paulo/SP | Atuação nacional</b><a href="https://maps.app.goo.gl/hWK2W9x1eAuRAmsd8" target="_blank" rel="noopener">Av. Paulista, 1636, Cerqueira César, São Paulo/SP</a></div></li>
         <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><b>Telefone e WhatsApp</b><a href="tel:+5511947449537">(11) 94744-9537</a></div></li>
         <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg><div><b>E-mail</b><a href="mailto:juridico@isadoracatarina.com.br">juridico@isadoracatarina.com.br</a></div></li>
         <li><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0zM8 21h8"/></svg><div><b>Inscrição na OAB</b><span>OAB/SP 464.377</span></div></li>
       </ul>
     </div>
-    <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.2046325163683!2d-46.65899022466992!3d-23.561092978800033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5906895f85df%3A0x6c5332cc490a857c!2sAdvogado%20Imobili%C3%A1rio%20SP%20e%20Grande%20ABC%20-%20Isadora%20Catarina%20Advocacia!5e0!3m2!1spt-PT!2sbr!4v1793280646658!5m2!1spt-PT!2sbr" title="Localização da Isadora Catarina Advocacia" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    <a class="map" href="https://maps.app.goo.gl/hWK2W9x1eAuRAmsd8" target="_blank" rel="noopener" aria-label="Abrir a localização do escritório no Google Maps">
+      <svg viewBox="0 0 600 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="600" height="520" fill="#F3ECE3"/>
+        <g stroke="#E4D8C8" stroke-width="2" fill="none"><path d="M0 120L600 82M0 400L600 368M120 0L150 520M250 0L272 520M470 0L492 520M0 470L600 440"/></g>
+        <g stroke="#EADFD1" stroke-width="1" fill="none"><path d="M0 60L600 22M0 180L600 142M0 330L600 298M60 0L88 520M190 0L214 520M360 0L384 520M540 0L566 520"/></g>
+        <path d="M-20 270L620 228" stroke="#FFFDF9" stroke-width="18"/>
+        <path d="M-20 270L620 228" stroke="#CEBB93" stroke-width="2"/>
+        <path d="M352 0L388 520" stroke="#FFFDF9" stroke-width="9"/>
+        <text x="150" y="249" font-family="Poppins,sans-serif" font-size="11" letter-spacing="3" fill="#A2803B" transform="rotate(-3.8 150 249)">AVENIDA PAULISTA</text>
+      </svg>
+      <span class="pin"><i></i></span>
+      <span class="label"><b>Isadora Catarina Advocacia</b>Av. Paulista, 1636, Cerqueira César</span>
+      <span class="open">Abrir no Google Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+    </a>
   </div>
 </section>
 </main>
@@ -368,9 +396,12 @@ footer .menu{color:var(--text)}
 <script>
 const WA='5511947449537';
 document.querySelectorAll('[data-wa]').forEach(a=>{a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(a.dataset.wa);a.target='_blank';a.rel='noopener'});
-const reviews=[["Letícia Andrade", "Excelente atendimento! A Isadora é extremamente atenciosa, profissional e transmite muita segurança. Sempre muito clara nas explicações e cuidadosa em cada detalhe. Dá para perceber o quanto entende do assunto e realmente se preocupa em encontrar a melhor solução para o cliente. Recomendo de olhos fechados!"], ["Angelo Viviani", "Super recomendo o escritório!! A Dra. Isadora e sua equipe são extremamente profissionais! Tive uma experiência ótima em relação ao tema de INCC, na questão de recuperação de valores cobrados indevidamente pelas construtoras em São Paulo."], ["Bruno Marcelino", "Processo ganho contra a Cury! 🏆🎉 Quero agradecer publicamente e recomendar o trabalho brilhante da advogada Isadora. Além de ter conduzido minha ação com extrema maestria até a vitória, o atendimento foi impecável. Empatia, agilidade e clareza definem o profissionalismo dela. Muito obrigado(a) por toda a dedicação e por trazer essa conquista para mim!"], ["Patricia Freire Serafim", "Super indico o trabalho da Doutora Isadora. Além de ser uma pessoa querida, é uma excelente profissional!!! Muito competente, dedicada, atenciosa e comprometida com seus clientes sempre disposta a ajudar e solucionar as questões das causas. Admiro muito seu trabalho e a forma cuidadosa e responsável com que conduz tudo. Super recomendo o escritório e seu trabalho!!! Gratidão pelo seu lado humano sempre atenciosa."], ["Alexandra Vieira", "Tive uma experiência muito positiva com a Dra. Isadora. Desde o início, ela foi muito atenciosa, foi cuidadosa e carinhosa com a minha mãe, conduzindo tudo com muita dedicação e profissionalismo. É uma profissional que transmite confiança e acolhimento. Muito grata por todo o cuidado e atenção durante o processo."], ["Eliza Wal Silva", "Quero deixar aqui minha recomendação para a Isadora, uma profissional extremamente correta, dedicada e focada no que faz. É uma advogada que transmite muita confiança, segurança e seriedade, sempre demonstrando muito comprometimento e atenção em cada detalhe. Admiro muito o profissionalismo, a responsabilidade e a dedicação dela. Sem dúvidas, uma excelente profissional, que exerce seu trabalho com muito respeito e competência. Recomendo de olhos fechados!"], ["Valdilene Silva Ferreira", "Venho aqui para agradecer a Dra. Isadora e escritório pelo excelente trabalho prestado no meu processo. Na causa ganha, foi muito satisfatório. Pode ter certeza que irei indicá-la. Parabéns, Dra. Isadora, pelo seu profissionalismo. Obrigada! Podem confiar que estão em excelentes mãos 🙌🏾"]];
+// Avaliações escolhidas pela Dra. Isadora. Colar o texto exatamente como está no Google, sem editar.
+// Card só aparece quando o texto estiver preenchido.
+const reviews=[["Tais Santos","Tive um problema com atraso de obra em um apartamento que adquiri na planta e eu precisava tirar algumas dúvidas sobre o contrato.\n\nA Dra. Isadora me atendeu e me orientou sobre os meus direitos:\n\n1. Seria a possibilidade de permanecer no seu imóvel e requerer uma indenização de 1% sob o valor total do imóvel, incluindo o seu financiamento, por mês de atraso até entrega das chaves.\n\n2. Devido ao atraso na entrega do meu imóvel, poderia desistir do negócio, pedir a rescisão do contrato, e receber de volta todos os valores investidos,incluindo a comissão de corretagem, em parcela única e com devida atualização monetária sobre todos os valores, além de multa para construtora por descumprimento contratual.\n\nMuito Obrigada Dra. Isadora e equipe pelo atendimento."],["Thiago Martins","Quero deixar meu agradecimento pelo excelente trabalho realizado. Desde o início do processo, sempre fui atendido com muita atenção, clareza e profissionalismo. O que mais me chamou a atenção foi o comprometimento e a dedicação em cada etapa, sempre buscando a melhor solução e mantendo a transparência durante todo o andamento.\n\nÉ muito bom poder contar com uma profissional que realmente domina o que faz e transmite confiança ao cliente. Fico muito satisfeito com o resultado alcançado e recomendo seu trabalho a qualquer pessoa que esteja procurando uma advogada séria, competente e comprometida."],["Nathália Ferreira","Após enfrentar um sério problema com o atraso na entrega do meu imóvel, sem perspectiva de solução por parte da construtora e com meu investimento em risco, encontrei o escritório por meio de uma indicação no Google.\n\nDesde o primeiro atendimento, recebi uma análise clara e objetiva do meu caso por meio de uma Due Diligence Imobiliária, que me proporcionou uma visão completa da situação contratual, dos riscos envolvidos e dos direitos que me assistiam.\n\nA Dra. Isadora Catarina e sua equipe demonstraram domínio técnico completo sobre os mecanismos de resolução contratual aplicáveis ao mercado imobiliário, com exposição precisa das possibilidades de reembolso dos valores investidos e dos caminhos jurídicos disponíveis."],["Rafael Muniz","Excelente profissional! A Dra. Isadora Catarina é uma advogada altamente qualificada no Direito Imobiliário, com atuação de destaque em demandas envolvendo distratos, revisão de INCC, saldo devedor, atraso na entrega de obra, e juros de obra, sempre com segurança jurídica e domínio técnico.\n\nConta com uma equipe extremamente preparada e comprometida, o que faz toda a diferença na condução dos casos e na qualidade do atendimento.\n\nAlém disso, a Dra. Isadora se destaca pelo cuidado com cada cliente, sempre priorizando o bem-estar, a transparência e a busca pelas melhores soluções de forma responsável e eficiente.\n\nSem dúvida, uma profissional de confiança, que recomendo com total segurança!"],["Denise Berning","Como é satisfatório pode contar com uma profissional que sabe exatamente o que está fazendo. Fui muito bem orientada, dúvidas completamente esclarecidas. Um profissionalismo ímpar, sempre procurando o melhor caminho com embasamento.  Recomendo fortemente!"],["Beatriz Dias","Gostaria de deixar meu sincero agradecimento à Dra. Isadora e a toda a equipe do escritório pelo excelente trabalho realizado.\n\nDesde o início, a Dra. Isadora foi extremamente transparente, atenciosa e profissional. Sempre me orientou com muita clareza, explicou cada etapa do processo de uma forma que eu pudesse realmente entender e esteve disponível para esclarecer minhas dúvidas.\n\nEm um momento que poderia ser cercado de inseguranças e preocupações, ter alguém tão competente e transparente para me orientar fez toda a diferença. Sou muito grata por todo o cuidado, dedicação e profissionalismo demonstrados durante todo o atendimento.\n\nParabéns pelo excelente trabalho e, em especial, muito obrigada, Dra. Isadora, por toda a atenção e por conduzir tudo com tanta responsabilidade e clareza. Recomendo o escritório de olhos fechados!"],["Robson Nunes","Agradeço a Deus dia e noite pelo excelente trabalho da Dra. Isadora e equipe.\nA gente sonha, trabalha, investe, e encontra uma construtora que não respeita seus clientes.\nComprei um imóvel na planta, a construtora atrasa as obras, passam os 180 dias de tolerância, e quando vamos perguntar o porquê, somos tratados com descaso ainda. Além dos vícios de construção deixados, nos tratam como se estivessem fazendo um favor pra nós, como se fosse de graça. A gente vai pegando, pagando, e nada. Não nos deu posição, não nos atendia, e fomos reclamar nas redes sociais.\nGraças a Deus existem pessoas e profissionais como a Dra Isadora, que vendo nosso caso, sentiu a nossa dor, a nossa revolta, e nos estendeu a mão.\nUma excelente profissional, inteligente, paciente, determinada a cumprir o seu papel de forma exemplar, e acima de tudo humana.\nE olha, me surpreendeu a forma de trabalho. Extremamente estratégico, não se deixando levar pelas circunstâncias contrárias, mas indo até o fim do que propôs aos seus clientes ! Realmente uma verdadeira advogada, que luta ao lado dos seus clientes!  Sempre disposta a nos atender, explicando toda a situação, tirando todas as dúvidas e o principal, tudo de forma transparente e verdadeira, sem rodeios !\nMuito obrigado por tudo, Dra Isadora, que Deus continue te abençoando sempre, mais e mais !"],["Josué Oliveira","Gostaríamos de deixar nosso agradecimento especial à advogada Isadora e a toda a sua equipe pelo excelente trabalho e por todo o cuidado que tiveram conosco.\n\nTivemos um atraso e alguns problemas com a construtora Tenda, e estávamos bastante preocupados com toda a situação. Graças à dedicação, competência e atenção da Isadora e de sua equipe, conseguimos resolver tudo da melhor forma.\n\nDesde o início, fomos muito bem orientados e acompanhados, sempre com muita responsabilidade e cuidado. Hoje estamos muito satisfeitos não só com o resultado, mas também com a forma como todo o processo foi conduzido.\n\nSuper recomendamos o trabalho da Isadora e de sua equipe! Profissionais competentes, atenciosos e que realmente se preocupam com seus clientes. Muito obrigada por todo o suporte e por nos ajudarem a solucionar essa situação! ❤️"],["Thais Farias","Quero deixar aqui meu agradecimento e minha recomendação à Dra. Isadora e a todo o seu escritório pelo excelente trabalho e, principalmente, pelo acolhimento que recebemos durante todo o processo.\n\nProcurei a Dra. Isadora por conta de um atraso na entrega do meu apartamento, adquirido com a construtora Cury. A construtora utilizou os 180 dias previstos para tolerância de atraso e, mesmo após esse período, ainda houve um atraso de mais 57 dias para a entrega das chaves.\n\nAntes mesmo de receber as chaves, entrei em contato com a Dra. Isadora para entender melhor quais eram os meus direitos e quais medidas poderiam ser tomadas. Tivemos uma primeira conversa e, mesmo sem termos fechado o contrato naquele momento, ela foi extremamente atenciosa, explicou toda a situação com muita clareza e nos orientou da melhor forma. Naquele primeiro contato, já me senti acolhida e segura com o atendimento do escritório.\n\nApós finalmente receber as chaves, entramos novamente em contato com a Dra. Isadora e decidimos ingressar com o processo. Hoje posso dizer, com toda certeza, que foi uma das melhores decisões que tomamos.\n\nDurante todo o processo, a Dra. Isadora sempre foi muito prestativa, disponível e paciente para esclarecer nossas dúvidas. Cada andamento importante era explicado por ela de forma clara, muitas vezes entrando em contato por telefone para nos explicar exatamente o que estava acontecendo e quais seriam os próximos passos. Isso fez toda a diferença, principalmente porque um processo pode ser bastante cansativo e gerar muitas dúvidas e inseguranças.\n\nNo final, tivemos um resultado positivo e conseguimos o reconhecimento dos dias de atraso no processo. Mais do que o resultado, sou muito grata por todo o suporte, atenção, profissionalismo e segurança que a Dra. Isadora nos proporcionou durante essa caminhada.\n\nIndico de olhos fechados o trabalho da Dra. Isadora e de seu escritório. É muito bom encontrar profissionais que realmente se importam com o cliente, que escutam, orientam e acompanham cada etapa de perto.\n\nDra. Isadora, muito obrigada por todo o cuidado, dedicação e por nos ajudar a buscar aquilo que era nosso por direito. Sem dúvida, fizemos a escolha certa! ❤️"],["Thiago Santos","Gostaria de deixar os meus mais sinceros agradecimentos à Dra. Isadora e à sua equipe, pois são profissionais incríveis. Antes de entrar em contato com o escritório da Dra. Isadora, cheguei a tentar contratar outros quatro escritórios de advocacia, porém, deixaram muito a desejar, principalmente no que tange ao esclarecimento de dúvidas e à comunicação.\n\nPor outro lado, com a Dra. Isadora e sua equipe, pude ter total liberdade para o esclarecimento de dúvidas, independentemente de ser via WhatsApp ou e-mail. Sempre obtive respostas claras e objetivas e, algo que acho super importante, utilizando um linguajar que alguém leigo como eu possa entender; tudo isso, claro, sempre com muita educação, profissionalismo e excelente tempo de resposta.\n\nOutro ponto que não posso deixar de citar é que sempre entram em contato para informar sobre o andamento do processo, e isso é muito importante, porque é comum que as pessoas fiquem preocupadas e ansiosas durante esse período. Além disso, algo que me deixou muito surpreso foi o tempo que meu processo levou para chegar ao êxito, pois foi muito mais rápido do que eu esperava, graças ao comprometimento do escritório, que foi espetacular, principalmente com as negociações. No meu caso, a ação se tratava de atraso de entrega de chaves, pela construtura Cury, e posso dizer que saí com um sentimento de felicidade e gratidão, através do resultado obtido."]].filter(([,t])=>t);
 const track=document.getElementById('track');
-track.innerHTML=reviews.map(([n,t])=>`<article class="review"><header><span class="avatar">${n[0]}</span><div><b>${n}</b><span class="stars">★★★★★</span></div></header><p>${t}</p></article>`).join('');
+if(!reviews.length)document.querySelectorAll('#track,.arrows').forEach(e=>e.remove());
+else track.innerHTML=reviews.map(([n,t])=>`<article class="review"><header><span class="avatar">${n[0]}</span><div><b>${n}</b><span class="stars">★★★★★</span></div></header><p>${t}</p></article>`).join('');
 document.querySelectorAll('.arrows button').forEach(b=>b.onclick=()=>track.scrollBy({left:b.dataset.dir*track.clientWidth*.9,behavior:'smooth'}));
 const hd=document.getElementById('top');addEventListener('scroll',()=>hd.classList.toggle('scrolled',scrollY>40),{passive:true});
 document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>document.getElementById('menu').classList.remove('open'));
