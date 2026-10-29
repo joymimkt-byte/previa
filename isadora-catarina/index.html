@@ -22,25 +22,26 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .wrap{width:min(1280px,100% - 32px);margin-inline:auto}
 .eyebrow{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-d);display:flex;align-items:center;gap:14px}
-.eyebrow::before{content:"";width:32px;height:1px;background:currentColor}
 h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--wine);line-height:1.1}
 h2{font-size:clamp(32px,4vw,48px);margin:16px 0 18px}
 section{padding:clamp(64px,9vw,112px) 0}
 
 /* Botões */
 .btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:12px;
-  background:var(--gold);color:var(--ink);font-weight:600;font-size:14px;letter-spacing:.02em;padding:17px 30px;border-radius:2px;
-  border:1px solid var(--gold);transition:transform .3s,box-shadow .3s,background .3s;animation:pulse 2.8s ease-in-out infinite;text-align:center}
+  background:linear-gradient(135deg,#F6E27A 0%,#E8C14F 22%,#C9971F 50%,#F3D36B 78%,#B8860B 100%);background-size:220% 100%;
+  color:#2A0A15;font-weight:700;font-size:15px;letter-spacing:.03em;padding:18px 32px;border-radius:4px;border:1px solid #F7E08A;
+  box-shadow:0 10px 26px -8px rgba(201,151,31,.75),inset 0 1px 0 rgba(255,255,255,.6),inset 0 -2px 0 rgba(120,80,0,.35);
+  text-shadow:0 1px 0 rgba(255,240,190,.6);transition:transform .3s,box-shadow .3s,background-position .6s;animation:pulse 2.4s ease-in-out infinite;text-align:center}
 .btn::after{content:"";position:absolute;top:0;left:-80%;width:45%;height:100%;
-  background:linear-gradient(110deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);animation:shine 3.2s ease-in-out infinite}
-.btn:hover{transform:translateY(-2px);background:#D9C9A5;box-shadow:0 14px 30px -12px rgba(162,128,59,.75)}
+  background:linear-gradient(110deg,transparent,rgba(255,255,255,.9),transparent);transform:skewX(-20deg);animation:shine 2.8s ease-in-out infinite}
+.btn:hover{transform:translateY(-3px);background-position:100% 0;box-shadow:0 18px 38px -10px rgba(201,151,31,.95),inset 0 1px 0 rgba(255,255,255,.7)}
 .btn svg{width:18px;height:18px;flex:none}
 .btn .arr{transition:transform .3s}.btn:hover .arr{transform:translateX(4px)}
-.btn-line{background:transparent;color:var(--wine);border:1px solid var(--gold-d);animation:none}
+.btn-line{background:transparent;color:var(--wine);border:2px solid #C9971F;box-shadow:none;text-shadow:none;animation:none}
 .btn-line::after{display:none}
-.btn-line:hover{background:var(--gold);color:var(--ink)}
-@keyframes shine{0%,55%{left:-80%}85%,100%{left:130%}}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(206,187,147,.55)}50%{box-shadow:0 0 0 10px rgba(206,187,147,0)}}
+.btn-line:hover{background:linear-gradient(135deg,#F6E27A,#C9971F);color:#2A0A15}
+@keyframes shine{0%,50%{left:-80%}80%,100%{left:130%}}
+@keyframes pulse{0%,100%{box-shadow:0 10px 26px -8px rgba(201,151,31,.75),0 0 0 0 rgba(232,193,79,.7)}50%{box-shadow:0 10px 26px -8px rgba(201,151,31,.75),0 0 0 12px rgba(232,193,79,0)}}
 
 /* Header */
 header{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,padding .4s,box-shadow .4s;padding:22px 0}
@@ -80,8 +81,8 @@ header.scrolled{background:rgba(46,10,21,.96);backdrop-filter:blur(8px);padding:
 /* Apresentação */
 .about-service{background:var(--beige-2);padding:0}
 .about-service .grid{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
-.art{position:relative;min-height:460px;background:linear-gradient(160deg,#5B1A2C,var(--wine-2));overflow:hidden}
-.art svg{position:absolute;inset:0;width:100%;height:100%}
+.art{position:relative;min-height:460px;background:var(--wine-2);overflow:hidden}
+.art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .art .tag{position:absolute;left:24px;bottom:20px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
 .about-service .txt{padding:clamp(48px,7vw,96px) clamp(24px,6vw,88px)}
 .highlights{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
@@ -128,7 +129,6 @@ header.scrolled{background:rgba(46,10,21,.96);backdrop-filter:blur(8px);padding:
 .review b{display:block;color:var(--ink);font-size:14px;font-weight:600}
 .stars{color:var(--gold-d);letter-spacing:2px;font-size:12px}
 .review p{font-size:14px}
-.review .pending{color:#A3948E;font-style:italic}
 .arrows{display:flex;gap:10px}
 .arrows button{width:46px;height:46px;border:1px solid var(--gold-d);background:transparent;color:var(--wine);cursor:pointer;font-size:18px;transition:.3s}
 .arrows button:hover{background:var(--gold)}
@@ -159,13 +159,7 @@ details p{padding:0 24px 22px;font-size:14px;animation:fade .4s ease}
 .contacts a,.contacts span{font-size:14px;color:#D9C9B6;border-bottom:1px solid transparent;transition:.3s}
 .contacts a:hover{color:var(--gold);border-color:var(--gold)}
 .map{position:relative;min-height:420px;background:#E9DFD2;display:block;overflow:hidden}
-.map svg{position:absolute;inset:0;width:100%;height:100%}
-.pin{position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
-.pin i{width:22px;height:22px;background:var(--wine);border:3px solid var(--gold);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 8px 16px -6px rgba(0,0,0,.5)}
-.pin::after{content:"";position:absolute;top:2px;width:22px;height:22px;border-radius:50%;border:2px solid var(--wine);animation:ping 2s ease-out infinite}
-@keyframes ping{from{transform:scale(.6);opacity:.8}to{transform:scale(3);opacity:0}}
-.map .label{position:absolute;left:50%;top:calc(46% + 18px);transform:translateX(-50%);background:var(--white);color:var(--ink);font-size:13px;padding:10px 16px;white-space:nowrap;box-shadow:0 10px 24px -14px rgba(0,0,0,.4)}
-.map .label b{display:block;font-family:var(--serif);font-size:17px;color:var(--wine);font-weight:600}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 /* Footer */
 footer{background:var(--beige-2);padding:56px 0 32px;font-size:13px}
@@ -239,7 +233,6 @@ footer .menu{color:var(--text)}
   <div class="hero-img" role="img" aria-label="Dra. Isadora Catarina em seu escritório"></div>
   <div class="wrap">
     <div class="hero-txt">
-      <span class="eyebrow reveal">Direito Imobiliário para o consumidor</span>
       <h1 class="reveal d1">Obra atrasada? E a construtora só promete uma nova data?<em>Entenda seus direitos.</em></h1>
       <p class="reveal d2">A data de entrega passou, a tolerância de 180 dias também, e a obra segue no mesmo lugar. A lei protege quem cumpriu sua parte do contrato e prevê a possibilidade de indenização pelo atraso.</p>
       <a class="btn reveal d3" data-wa="Olá, Dra. Isadora. Quero saber meus direitos sobre o atraso do meu imóvel na planta." href="#">Quero saber meus direitos <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -258,22 +251,8 @@ footer .menu{color:var(--text)}
 
 <section class="about-service">
   <div class="grid">
-    <div class="art" aria-hidden="true">
-      <svg viewBox="0 0 600 460" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#CEBB93" stroke-width="1">
-        <g opacity=".55">
-          <path d="M120 460V150h180v310M300 460V90h170v370M470 460V200h110v260"/>
-          <path d="M120 190h180M120 230h180M120 270h180M120 310h180M120 350h180M120 390h180M120 430h180"/>
-          <path d="M300 130h170M300 170h170M300 210h170M300 250h170M300 290h170M300 330h170M300 370h170M300 410h170"/>
-          <path d="M180 150v310M240 150v310M357 90v370M413 90v370M525 200v260"/>
-          <path d="M470 240h110M470 280h110M470 320h110M470 360h110M470 400h110M470 440h110"/>
-        </g>
-        <path d="M80 40v420M60 40h360M80 40l40 40M420 40v30" stroke-width="1.4"/>
-        <path d="M410 70h20v14h-20z" />
-        <circle cx="520" cy="80" r="26" opacity=".35"/>
-      </svg>
-    </div>
+    <div class="art"><img src="img/obra.webp" alt="Prédio residencial em construção, imóvel na planta" loading="lazy" width="722" height="409"></div>
     <div class="txt">
-      <span class="eyebrow reveal">Direito Imobiliário para o consumidor</span>
       <h2 class="reveal d1">Atraso na entrega de imóvel na planta</h2>
       <p class="reveal d2">O escritório Isadora Catarina Advocacia atua em Direito Imobiliário com foco em contratos de imóvel na planta: atraso na entrega, distrato e cláusulas abusivas.</p>
       <div class="highlights reveal d3"><span>Imóveis residenciais e comerciais</span><span>Atuação nacional</span><span>Análise personalizada de cada caso</span></div>
@@ -371,19 +350,7 @@ footer .menu{color:var(--text)}
         <li><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0zM8 21h8"/></svg><div><b>Inscrição na OAB</b><span>OAB/SP 464.377</span></div></li>
       </ul>
     </div>
-    <a class="map" href="https://maps.app.goo.gl/hWK2W9x1eAuRAmsd8" target="_blank" rel="noopener" aria-label="Ver localização no mapa">
-      <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <rect width="600" height="500" fill="#ECE3D7"/>
-        <g fill="#E2D6C6"><rect x="20" y="20" width="140" height="120"/><rect x="190" y="20" width="160" height="90"/><rect x="380" y="20" width="200" height="140"/><rect x="20" y="300" width="120" height="180"/><rect x="420" y="320" width="160" height="160"/><rect x="200" y="340" width="170" height="140"/></g>
-        <g fill="#DCE2CF"><rect x="190" y="140" width="110" height="60"/><rect x="40" y="170" width="90" height="90"/></g>
-        <g stroke="#FFFDF9" stroke-width="14" fill="none"><path d="M-20 250L640 205"/><path d="M175 -10L215 520"/><path d="M365 -10L400 520"/></g>
-        <g stroke="#FFFDF9" stroke-width="6" fill="none"><path d="M0 160L600 120M0 330L600 300M110 0L150 500M500 0L530 500"/></g>
-        <path d="M-20 250L640 205" stroke="#CEBB93" stroke-width="3" stroke-dasharray="0" fill="none" opacity=".8"/>
-        <text x="470" y="198" font-family="Poppins" font-size="11" fill="#8E7B70" transform="rotate(-4 470 198)">Av. Paulista</text>
-      </svg>
-      <span class="pin"><i></i></span>
-      <span class="label"><b>Isadora Catarina Advocacia</b>Av. Paulista, 1636</span>
-    </a>
+    <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.2046325163683!2d-46.65899022466992!3d-23.561092978800033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5906895f85df%3A0x6c5332cc490a857c!2sAdvogado%20Imobili%C3%A1rio%20SP%20e%20Grande%20ABC%20-%20Isadora%20Catarina%20Advocacia!5e0!3m2!1spt-PT!2sbr!4v1793280646658!5m2!1spt-PT!2sbr" title="Localização da Isadora Catarina Advocacia" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
   </div>
 </section>
 </main>
@@ -404,9 +371,9 @@ footer .menu{color:var(--text)}
 <script>
 const WA='5511947449537';
 document.querySelectorAll('[data-wa]').forEach(a=>{a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(a.dataset.wa);a.target='_blank';a.rel='noopener'});
-const names=['Tais Santos','Thiago Martins','Nathalia Ferreira','Rafael Muniz','Denise Berning','Beatriz Dias','Robson Nunes','Josue Oliveira','Thais Farias','Thiago Santos'];
+const reviews=[["Letícia Andrade", "Excelente atendimento! A Isadora é extremamente atenciosa, profissional e transmite muita segurança. Sempre muito clara nas explicações e cuidadosa em cada detalhe. Dá para perceber o quanto entende do assunto e realmente se preocupa em encontrar a melhor solução para o cliente. Recomendo de olhos fechados!"], ["Angelo Viviani", "Super recomendo o escritório!! A Dra. Isadora e sua equipe são extremamente profissionais! Tive uma experiência ótima em relação ao tema de INCC, na questão de recuperação de valores cobrados indevidamente pelas construtoras em São Paulo."], ["Bruno Marcelino", "Processo ganho contra a Cury! 🏆🎉 Quero agradecer publicamente e recomendar o trabalho brilhante da advogada Isadora. Além de ter conduzido minha ação com extrema maestria até a vitória, o atendimento foi impecável. Empatia, agilidade e clareza definem o profissionalismo dela. Muito obrigado(a) por toda a dedicação e por trazer essa conquista para mim!"], ["Patricia Freire Serafim", "Super indico o trabalho da Doutora Isadora. Além de ser uma pessoa querida, é uma excelente profissional!!! Muito competente, dedicada, atenciosa e comprometida com seus clientes sempre disposta a ajudar e solucionar as questões das causas. Admiro muito seu trabalho e a forma cuidadosa e responsável com que conduz tudo. Super recomendo o escritório e seu trabalho!!! Gratidão pelo seu lado humano sempre atenciosa."], ["Alexandra Vieira", "Tive uma experiência muito positiva com a Dra. Isadora. Desde o início, ela foi muito atenciosa, foi cuidadosa e carinhosa com a minha mãe, conduzindo tudo com muita dedicação e profissionalismo. É uma profissional que transmite confiança e acolhimento. Muito grata por todo o cuidado e atenção durante o processo."], ["Eliza Wal Silva", "Quero deixar aqui minha recomendação para a Isadora, uma profissional extremamente correta, dedicada e focada no que faz. É uma advogada que transmite muita confiança, segurança e seriedade, sempre demonstrando muito comprometimento e atenção em cada detalhe. Admiro muito o profissionalismo, a responsabilidade e a dedicação dela. Sem dúvidas, uma excelente profissional, que exerce seu trabalho com muito respeito e competência. Recomendo de olhos fechados!"], ["Valdilene Silva Ferreira", "Venho aqui para agradecer a Dra. Isadora e escritório pelo excelente trabalho prestado no meu processo. Na causa ganha, foi muito satisfatório. Pode ter certeza que irei indicá-la. Parabéns, Dra. Isadora, pelo seu profissionalismo. Obrigada! Podem confiar que estão em excelentes mãos 🙌🏾"]];
 const track=document.getElementById('track');
-track.innerHTML=names.map(n=>`<article class="review"><header><span class="avatar">${n[0]}</span><div><b>${n}</b><span class="stars">★★★★★</span></div></header><p class="pending">Texto da avaliação no Google a inserir.</p></article>`).join('');
+track.innerHTML=reviews.map(([n,t])=>`<article class="review"><header><span class="avatar">${n[0]}</span><div><b>${n}</b><span class="stars">★★★★★</span></div></header><p>${t}</p></article>`).join('');
 document.querySelectorAll('.arrows button').forEach(b=>b.onclick=()=>track.scrollBy({left:b.dataset.dir*track.clientWidth*.9,behavior:'smooth'}));
 const hd=document.getElementById('top');addEventListener('scroll',()=>hd.classList.toggle('scrolled',scrollY>40),{passive:true});
 document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>document.getElementById('menu').classList.remove('open'));
